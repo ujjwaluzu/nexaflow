@@ -13,7 +13,7 @@ export default function Image() {
         width: '100%',
         height: '100%',
         padding: 70,
-        background: '#101318',
+        background: '#0a0a0a',
         color: '#f2f3f1',
         fontFamily: 'sans-serif',
       }}
@@ -33,10 +33,10 @@ export default function Image() {
       <div
         style={{
           display: 'flex',
-          borderTop: '1px solid #303640',
+          borderTop: '1px solid #343a2d',
           paddingTop: 25,
           fontSize: 19,
-          color: '#8b9bae',
+          color: '#c6ff35',
         }}
       >
         WEB ENGINEERING / SOFTWARE / AUTOMATION / INFRASTRUCTURE

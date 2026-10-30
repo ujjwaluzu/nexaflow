@@ -30,7 +30,7 @@ body:has(.home-page) {
   --muted: #aaa28c;
   --border: #4a463c;
   --surface: #191813;
-  --accent: #f1ead6;
+  --accent: #c6ff35;
   --page-width: 1320px;
   --font-heading: 'Nexora Anton';
   --font-body: 'Nexora Manrope';
@@ -84,7 +84,7 @@ body:has(.home-page) .nav-cta,
   min-height: 48px;
   gap: 12px;
   padding: 12px 24px;
-  border: 1px solid #f1ead6;
+  border: 1px solid var(--accent);
   border-radius: 999px;
   font-size: 14px;
   font-weight: 700;
@@ -97,7 +97,7 @@ body:has(.home-page) .nav-cta:hover,
 }
 
 .home-page .button-primary:hover {
-  background: #fff8e6;
+  background: #d4ff72;
   transform: none;
 }
 
@@ -115,7 +115,7 @@ body:has(.home-page) :is(.button, .nav-cta, .capability-row):hover {
 }
 
 body:has(.home-page) :focus-visible {
-  outline: 2px solid #f1ead6;
+  outline: 2px solid var(--accent);
   outline-offset: 5px;
 }
 
@@ -136,7 +136,7 @@ body:has(.home-page) :focus-visible {
 }
 
 .home-page .accent {
-  color: inherit;
+  color: var(--accent);
 }
 
 .home-page .mono,
@@ -405,18 +405,18 @@ body:has(.home-page) :focus-visible {
 }
 
 .home-page .capability-row:first-child {
-  background: #f1ead6;
+  background: var(--accent);
   color: #0a0a0a;
 }
 
 .home-page .capability-row:hover {
-  border-color: #f1ead6;
+  border-color: var(--accent);
   background: transparent;
   padding: 90px 28px 30px;
 }
 
 .home-page .capability-row:first-child:hover {
-  background: #fff8e6;
+  background: #d4ff72;
 }
 
 .home-page .capability-row:first-child :is(p, .mono) {
