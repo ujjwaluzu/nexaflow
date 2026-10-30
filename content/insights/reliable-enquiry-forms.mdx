@@ -1,0 +1,39 @@
+## A click is not a captured lead
+
+A contact form can look finished while its workflow remains fragile. The browser shows a spinner, a notification request fails, and the visitor cannot tell whether the enquiry arrived. Retrying may create a duplicate, while closing the page may lose the only copy.
+
+Treat the form as the beginning of a small transaction. The interface collects information, the server validates it, a durable store accepts it, and delivery tasks notify the people who need to act. Each stage has a different failure mode.
+
+## Validate at the boundary
+
+Browser validation gives immediate feedback. Server validation protects the system. Both should use the same definition of the fields, including sensible length limits, allowed service values and a deliberate policy for optional URLs.
+
+Do not ask for information that is not useful to the conversation. Explain what the data will be used for and link the privacy notice beside the consent control. Keep optional marketing permission separate from the permission needed to respond to an enquiry.
+
+Error messages should name the problem next to the field and be connected to it programmatically. After an unsuccessful submission, move focus to the first invalid field. A red border by itself is insufficient feedback.
+
+## Save before sending
+
+The database record is the source of truth for a captured enquiry. If an email provider is unavailable after the save, the enquiry still exists. That should not be presented to the visitor as if the whole submission failed.
+
+Create delivery tasks alongside the lead. An outbox records that a confirmation email, founder notification or CRM handoff still needs to happen. It makes incomplete work visible and gives an operator something concrete to retry.
+
+The save and task creation should be atomic. Otherwise a process crash between those operations can leave a record with no notification task. A database trigger or transaction can close that gap.
+
+## Make retries safe
+
+Use a stable submission identifier so that retrying a request does not create a second lead. Delivery tasks should also have a stable identifier that can be used as an idempotency key where the external provider supports it.
+
+Separate temporary delivery failures from validation failures. A malformed email address needs a field correction. A temporary provider error needs a retry. The visitor should not be asked to solve an infrastructure problem by repeatedly clicking the button.
+
+## Protect the public endpoint
+
+A public form needs more than a hidden submit button. Restrict accepted request sizes, validate origin where appropriate, use a honeypot and apply rate limits in a store shared by production instances. Never trust a caller-supplied IP header unless the hosting boundary guarantees its value.
+
+Keep administrative credentials on the server, and ensure the public database role cannot read lead records. Logging should avoid enquiry content and email addresses. Operational identifiers and error categories are enough for many investigations.
+
+## Confirm what actually happened
+
+The confirmation screen should state the accepted result. It should not promise that an email has arrived merely because a request was queued. A local test mode must also be visibly different from a live submission.
+
+A dependable form is not complicated because it has many fields. It is dependable because the boundaries are clear: what was validated, what was saved, what remains to be delivered, and what the visitor can safely do next.

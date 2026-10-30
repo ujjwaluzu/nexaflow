@@ -1,0 +1,48 @@
+## A studio website with a job to do
+
+This is the website you are using. It is an **independent studio project**, created to introduce the practice and give a prospective client a clear next step. It is not a paid client engagement.
+
+The project combines a visual identity, service and industry content, a small publishing system, and an enquiry workflow. Its outcomes are the implemented artifacts in this repository. Traffic, revenue and conversion improvements have not been measured.
+
+## The problem
+
+A new engineering studio has several things to explain at once: what it builds, which business problems it can address, how an engagement works, and why a client should feel comfortable starting a conversation. Without established client evidence, the work must demonstrate care through its own design, content and implementation.
+
+The four disciplines also need to feel connected. A business website can lead into a customer portal. An enquiry flow can connect to a CRM. That software needs a deployment and maintenance plan. The information architecture makes these relationships visible while giving each service its own useful page.
+
+## The solution
+
+The visual direction uses editorial typography and a structural N assembled from bolted members on a shared foundation. The illustration is original SVG geometry. It is a brand metaphor, not a representation of a real monitoring system or a performance metric.
+
+Capabilities are presented in numbered rows, giving the page a clear reading rhythm without a repeated grid of interchangeable cards. Large headlines and small technical labels establish hierarchy. The enquiry action is available from the primary navigation and repeated where a reader has enough context to act.
+
+The content states what the studio can deliver without inventing experience, customers or guarantees. The portfolio can grow through a typed local content registry and MDX case studies.
+
+## Role and scope
+
+The scope covers brand direction, information architecture, interaction design, content, front-end and server-side engineering, database migration, tests and deployment guidance. The provisional identity and configurable contact details are kept separate from the page components.
+
+## Technical architecture
+
+Marketing pages use the Next.js App Router and server components by default. The small interactive surfaces—navigation, illustration modes, analytics consent and the enquiry form—use client components. Fonts are served locally, and the hero is vector artwork rather than an external asset dependency.
+
+The enquiry API validates the same field schema used in the browser. In configured production mode it writes to PostgreSQL through Supabase, then processes durable delivery records for the confirmation email, founder notification and optional CRM integration. External credentials remain on the server. A local test mode records submissions and simulated deliveries without contacting those services.
+
+Case studies and insights are local MDX modules bundled at build time. They do not require a file system or a CMS request at the edge. The deployment target is Cloudflare Workers through the OpenNext adapter.
+
+## The difficult decisions
+
+The first decision was to publish less portfolio content rather than imply work that could not be verified. Other project names had been suggested, but their assets and code were not available in this repository.
+
+The second was to distinguish persistence from notification. A delivery error after saving a lead should not tell the visitor to resubmit the same enquiry. Durable delivery records allow failed notifications to be retried separately.
+
+The third was to keep configuration honest. A working local flow does not prove that a production database, sender domain, CRM account or hosted deployment has been configured. Each has an explicit activation and verification step.
+
+## Outcomes and limits
+
+- A complete marketing site with dedicated services, industry pages and a documented process.
+- A reusable content system for independently verified work and original insights.
+- A validated lead-capture pipeline, a database migration and delivery retry tooling.
+- Responsive layouts, automated checks and deployment documentation in the repository.
+
+No commercial results are claimed. Production activation depends on the operator configuring the real domain, database, email sender and notification recipient, then verifying the deployed flow.

@@ -1,0 +1,37 @@
+## Start with the question
+
+An MVP is useful when it helps answer a specific question. Can a customer complete the core task? Will a team use this workflow instead of its spreadsheet? Is the information valuable enough for someone to return?
+
+“Launch the platform” is not a useful question. It encourages a long feature list without defining what the first release needs to teach you. Write the learning goal in plain language and identify the behaviour that would provide evidence.
+
+## Choose one coherent journey
+
+Imagine the first user arriving with a real task. What must they understand? What information do they need to provide? What result should they receive? Map that journey from beginning to end.
+
+A small release still needs a complete experience. A customer portal with many unfinished sections is less useful than a narrow portal that handles one request clearly. Remove optional branches before weakening the core path.
+
+For each proposed feature, ask whether the chosen user can complete the essential task without it. If the answer is yes, put it on a later list. This is not a judgement about the feature's long-term value. It is a way to protect the first release from carrying every future intention.
+
+## Separate product scope from engineering foundations
+
+Some foundations are necessary even in a small application: access boundaries, input validation, an understandable data model and a way to recover from a bad release. Calling a release an MVP does not make private data less private.
+
+Other technical investments can wait. You may not need a complex service architecture, a general plugin system or infrastructure designed for hypothetical traffic. Choose tools around the actual workflow and the people who will maintain it.
+
+Document the tradeoff when a decision is deliberately temporary. A manual fulfilment step can be sensible for an early pilot if it is visible, owned and sustainable for the expected volume. An undocumented manual dependency is a different problem.
+
+## Write acceptance criteria around behaviour
+
+“The dashboard exists” does not say much. “An authorised operator can find an open request, update its status and see that update after refreshing” is testable. It connects the interface, permissions and persistence to a task.
+
+Include the important failure behaviour. What does the user see when a save fails? Can they safely retry? Can they tell whether a request was accepted? These details matter more than adding another chart to a dashboard.
+
+Agree a short set of acceptance criteria before building. Use them in demonstrations so feedback stays connected to the purpose of the release. New ideas can be captured without silently changing the agreement.
+
+## Plan the first week after launch
+
+Identify who can help users, where errors will be visible and how feedback will be collected. A first release that nobody can operate is not ready to provide useful learning.
+
+Decide what evidence will lead to a change. A confusing field may need a clearer label. A workflow people never start may indicate a deeper problem. Avoid interpreting every request as a requirement for a new feature.
+
+The objective is a small, coherent system that can be used, supported and understood. That creates a better basis for the next decision than a broad collection of screens that has not met real work.

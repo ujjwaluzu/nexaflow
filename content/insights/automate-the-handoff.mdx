@@ -1,0 +1,37 @@
+## Follow one piece of work
+
+The best place to start an automation project is often the gap between two familiar tools. A website receives an enquiry. Someone copies it into a CRM, looks up the company, adds a note and sends an acknowledgement. Each action is small. The repeated handoff is the problem.
+
+Choose one real item of work and follow it from arrival to completion. Write down who touches it, where its information lives, and how the next person knows it is ready. This gives you a process you can discuss and test, rather than an abstract ambition to automate the business.
+
+## Describe the trigger and the finish
+
+A useful automation has an observable beginning and end. “When a valid enquiry is saved, create a CRM contact and notify the assigned person” is a much clearer scope than “automate sales.” The smaller statement identifies the trigger, required information and destination.
+
+Define what success means before choosing a tool. A record in the destination system should have the expected fields, avoid duplicates and point back to its source. The person receiving it should understand what action is needed.
+
+The happy path is only one example. Ask what happens when the email address already exists, the CRM is unavailable, the submission is incomplete or the same event arrives twice. A process without answers to these questions is likely to move manual work into error recovery.
+
+## Use rules where rules are enough
+
+Many valuable automations do not need a language model. Routing by service selection, checking required fields and sending a receipt are deterministic operations. They are easier to inspect when expressed as explicit rules.
+
+AI can be useful for summarising a long description, suggesting a category or drafting a response from approved information. Those tasks have uncertainty. The workflow should preserve the original input and make it clear whether a person needs to review the suggestion.
+
+Do not turn an untested classification into an irreversible action. A model that proposes a lead category has a different risk profile from one that changes a contract or sends an offer without review.
+
+## Keep a recovery path
+
+External services fail, credentials expire and limits are reached. A dependable workflow needs to remember what happened. Store the original event and a delivery state before assuming the handoff is complete.
+
+Use a stable event identifier to avoid creating duplicate side effects when retrying. Where a destination supports idempotency, send the same identifier on a retry. Where it does not, define how you will look up or update the existing record.
+
+Keep enough operational information to investigate a failure without copying sensitive customer content into logs. An event identifier, task type and failure category are often more useful than a full request body.
+
+## Run a bounded pilot
+
+Start with one workflow and representative examples. Include incomplete inputs, repeated events and temporary service errors. Have the people doing the work review the result: did the automation remove effort, or did it create another place to check?
+
+Agree who owns the workflow after launch. Someone needs to receive meaningful failure alerts, update credentials and adjust the rules when the business process changes. Automation moves responsibility; it does not eliminate it.
+
+Once the first handoff is dependable, the next opportunity usually becomes easier to see. You now have a working pattern, clear ownership and evidence about what actually helps the team.

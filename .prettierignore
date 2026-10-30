@@ -1,0 +1,11 @@
+node_modules
+.next
+.open-next
+.wrangler
+.local
+test-results
+playwright-report
+package-lock.json
+scripts/lib
+public/brand/structure*.svg
+next-env.d.ts
