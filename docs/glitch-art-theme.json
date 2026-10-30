@@ -1,0 +1,8 @@
+{
+  "tool": "Built-in image_gen",
+  "transparent_background": true,
+  "source": "public/art/glitch-transparent.webp",
+  "style_references": ["public/art/laptop-transparent.webp", "public/art/brain-transparent.webp"],
+  "output": "public/art/glitch-halftone-transparent.webp",
+  "prompt": "Use case: style-transfer. Asset type: transparent website editorial sticker illustration for NEXORA. Input image 1 is the EDIT TARGET: the transparent glitch cutout of a seated person at a desk with a computer and their head dissolving into streaming digital screens. Input images 2 (laptop sticker) and 3 (brain sticker) are STYLE REFERENCES ONLY; do not incorporate their subjects. Transform image 1 to match the bold handmade screenprinted halftone style of images 2 and 3. Use only opaque near-black #0a0a0a and warm cream #f1ead6 inks, clear coarse halftone dots, simplified high-contrast printed shapes, and an irregular cream die-cut sticker rim. Remove all blue, red, yellow, skin-tone and photographic colour. Preserve the seated figure's pose, desk, chair, monitor, and the distinctive rightward stream of glitch fragments replacing the head; keep the existing portrait composition and subject framing. Keep the fragmented edges readable at a small 220px display width, with cream details on black forms; preserve black ink inside the subject. Keep the surrounding background genuinely transparent (RGBA alpha), including clear gaps between isolated glitch fragments. No replacement backdrop, no black rectangular panel, no checkerboard painting, no gradients, no glow, no added typography, no invented logo, no extra objects. The result should look like another sticker from the same set as images 2 and 3."
+}

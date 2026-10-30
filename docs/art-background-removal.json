@@ -1,0 +1,31 @@
+{
+  "tool": "Built-in image_gen",
+  "transparent_background": true,
+  "assets": [
+    {
+      "source": "nexora-home-redesign/assets/brain.jpg",
+      "output": "public/art/brain-transparent.webp",
+      "prompt": "Use case: background-extraction. Edit target: the single supplied brain.jpg image, an existing NEXORA website asset. Primary request: Isolate the complete brain sticker. Remove only the solid black background OUTSIDE the thick white sticker outline. Keep the white perimeter and ALL black interior brain shading and halftone dots opaque and unchanged. Keep its original size, orientation and placement. Deliver a genuinely transparent RGBA background, not black, white, or a painted checkerboard. This is faithful background removal, not a redesign or recreation. Do not invent objects, change the subject, add typography, crop subject details, add drop shadows or add a replacement background. Preserve the source aspect ratio and framing as closely as possible."
+    },
+    {
+      "source": "nexora-home-redesign/assets/laptop.jpg",
+      "output": "public/art/laptop-transparent.webp",
+      "prompt": "Use case: background-extraction. Edit target: the single supplied laptop.jpg image, an existing NEXORA website asset. Primary request: Isolate the complete hands typing on laptop sticker. Remove only the solid black background OUTSIDE the thick white sticker outline. Keep the white perimeter, laptop screen, keyboard, hands and all black interior shading and halftone texture opaque and unchanged. Keep its original orientation and placement. Deliver a genuinely transparent RGBA background, not black, white, or a painted checkerboard. This is faithful background removal, not a redesign or recreation. Do not invent objects, change the subject, add typography, crop subject details, add drop shadows or add a replacement background. Preserve the source aspect ratio and framing as closely as possible."
+    },
+    {
+      "source": "nexora-home-redesign/assets/hand.jpg",
+      "output": "public/art/hand-transparent.webp",
+      "prompt": "Use case: background-extraction. Edit target: the single supplied hand.jpg image, an existing NEXORA website asset. Primary request: Isolate the two shaking hands: one halftone human hand and one white wireframe hand. Remove the black poster backdrop AND its background circles, thin rules, boxes, labels, small writing, orange dot, yellow line and bottom-left collage. Preserve the exact hand shapes, pose, scale, wireframe lines and halftone texture. Retain black shading within the human hand silhouette; open wireframe spaces outside the hand silhouette should be transparent. Deliver a genuinely transparent RGBA background, not black, white, or a painted checkerboard. This is faithful background removal, not a redesign or recreation. Do not invent objects, change the subject, add typography, crop subject details, add drop shadows or add a replacement background. Preserve the source aspect ratio and framing as closely as possible."
+    },
+    {
+      "source": "nexora-home-redesign/assets/mech.jpg",
+      "output": "public/art/mech-transparent.webp",
+      "prompt": "Use case: background-extraction. Edit target: the single supplied mech.jpg image, an existing NEXORA website asset. Primary request: Isolate the original illustrated mechanical hand holding the tiny globe and its starburst rays. Remove the solid black poster background around and between the fingers. Preserve the original hand pose, mechanical details, cream/grey colour, halftone print texture, globe and light rays exactly. Retain black interior mechanical shadows as opaque. Do not add an outline or border. Deliver a genuinely transparent RGBA background, not black, white, or a painted checkerboard. This is faithful background removal, not a redesign or recreation. Do not invent objects, change the subject, add typography, crop subject details, add drop shadows or add a replacement background. Preserve the source aspect ratio and framing as closely as possible."
+    },
+    {
+      "source": "nexora-home-redesign/assets/glitch.jpg",
+      "output": "public/art/glitch-transparent.webp",
+      "prompt": "Use case: background-extraction. Edit target: the single supplied glitch.jpg image, an existing NEXORA website asset. Primary request: Extract the seated person, chair, desk, monitor and the entire streaming digital glitch effect as one carefully cut-out subject. Remove the surrounding room background, walls, ceiling, framed wall picture and empty dark space. Keep the original person, their pose, the desk, monitor, fine glitch particles and light streams unchanged, with natural detailed edges and transparent spaces between particles. Preserve the original photographic colours and lighting. Deliver a genuinely transparent RGBA background, not black, white, or a painted checkerboard. This is faithful background removal, not a redesign or recreation. Do not invent objects, change the subject, add typography, crop subject details, add drop shadows or add a replacement background. Preserve the source aspect ratio and framing as closely as possible."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "tool": "Built-in image_gen",
+  "transparent_background": true,
+  "source": "public/art/mech-transparent.webp",
+  "style_references": [
+    "public/art/glitch-halftone-transparent.webp",
+    "public/art/laptop-transparent.webp"
+  ],
+  "output": "public/art/mech-halftone-transparent.webp",
+  "prompt": "Use case: style-transfer. Asset type: transparent editorial sticker illustration for the NEXORA studio website. Input image 1 is the EDIT TARGET: the mechanical hand holding a small globe with long starburst rays. Input image 2 (glitch halftone sticker) and image 3 (laptop sticker) are STYLE REFERENCES ONLY; do not incorporate their subjects. Restyle the mechanical-hand edit target into the exact same handmade black-and-cream screenprinted sticker family as image 2: use near-black #0a0a0a and warm cream #f1ead6 inks, strong coarse halftone dots and stippling for shading, crisp simplified printed mechanical details, and a clean irregular cream die-cut rim around the silhouette. Preserve the original mechanical hand pose, number and arrangement of fingers, wrist structure, visible joints and panel details, tiny globe and starburst rays, and the original portrait framing. Remove grey photographic-looking washes and any red or yellow fringe artifacts, using black and cream only. Keep the surrounding background genuinely transparent (RGBA alpha), with transparent gaps between fingers and between the starburst rays. Black ink inside the subject must remain opaque. Keep all subject edges inside the canvas with a small transparent margin so the sticker and rays are not cut off. No background panel, no checkerboard painting, no gradients, no glow effects, no added typography, no invented symbols, no extra objects. The result should read as another sticker from the same set as the supplied glitch and laptop references."
+}

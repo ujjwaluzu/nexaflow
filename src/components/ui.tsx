@@ -86,9 +86,13 @@ export function PageHero({
     </section>
   );
 }
-export function FinalCTA() {
+export function FinalCTA({ editorial = false }: { editorial?: boolean }) {
   return (
-    <section className="final-cta shell">
+    <section
+      className={`final-cta shell${editorial ? ' home-final-cta' : ''}`}
+      id={editorial ? 'end' : undefined}
+      data-reveal={editorial || undefined}
+    >
       <Label>Let’s make it happen</Label>
       <div className="final-cta-grid">
         <h2>

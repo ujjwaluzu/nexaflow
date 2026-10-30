@@ -4,10 +4,10 @@ import { ArrowUpRight, Check, Plus } from 'lucide-react';
 import { services } from '@/data/services';
 import { processSteps } from '@/data/process';
 import { brand } from '@/config/brand';
-import { Label, SectionHeading, ServiceIcon, TextLink, EmptyProjectNote } from './ui';
+import { Button, Label, SectionHeading, ServiceIcon, TextLink, EmptyProjectNote } from './ui';
 export function Capabilities() {
   return (
-    <section className="section shell" id="capabilities">
+    <section className="section shell home-capabilities" id="capabilities" data-reveal>
       <SectionHeading
         label="Our capabilities"
         number="01"
@@ -35,7 +35,53 @@ export function Capabilities() {
     </section>
   );
 }
-export function SelectedWork({ full = false }: { full?: boolean }) {
+export function SelectedWork({
+  full = false,
+  editorial = false,
+}: {
+  full?: boolean;
+  editorial?: boolean;
+}) {
+  if (editorial) {
+    return (
+      <section className="section shell home-work" id="work" data-reveal>
+        <Label number="02">Selected work</Label>
+        <div className="home-work-grid">
+          <div>
+            <h2>Built with purpose. Engineered to perform.</h2>
+            <div className="home-project-info">
+              <Label>Independent project · Web engineering</Label>
+              <h3>
+                <Link href="/work/studio-website">{brand.name} / The studio website</Link>
+              </h3>
+              <p>
+                A considered digital home for an independent engineering practice. Brand, design,
+                content and a connected enquiry system.
+              </p>
+              <p className="mono">Next.js / TypeScript / PostgreSQL</p>
+              <EmptyProjectNote />
+              <Button href="/work/studio-website">Read the case study</Button>
+              <TextLink href="/work">Explore our work</TextLink>
+            </div>
+          </div>
+          <Link
+            className="home-work-art"
+            href="/work/studio-website"
+            aria-label={`View the ${brand.name} studio website case study`}
+          >
+            <Image
+              src="/art/mech-halftone-transparent.webp"
+              width={730}
+              height={919}
+              alt="Black-and-cream halftone sticker of a mechanical hand holding a small globe"
+              sizes="(max-width: 900px) 100vw, 50vw"
+              loading="lazy"
+            />
+          </Link>
+        </div>
+      </section>
+    );
+  }
   return (
     <section className={`section shell ${full ? 'work-section-full' : ''}`}>
       {!full && (
@@ -102,57 +148,78 @@ export function WhyStudio() {
     'A foundation for a long-term partnership',
   ];
   return (
-    <section className="section section-surface">
-      <div className="shell why-grid">
-        <div>
-          <Label number="03">The studio advantage</Label>
-          <h2>
-            One engineering partner.
-            <br />
-            <span className="muted">Connected solutions.</span>
-          </h2>
+    <section className="section home-statement" id="about" data-reveal>
+      <div className="shell">
+        <Label>The studio advantage</Label>
+        <div className="home-statement-grid">
+          <span className="statement-word" aria-hidden="true">
+            We
+          </span>
+          <div className="statement-copy">
+            <Image
+              className="brain-sticker"
+              src="/art/brain-transparent.webp"
+              width={820}
+              height={820}
+              alt="Halftone brain sticker"
+              sizes="(max-width: 600px) 80vw, 340px"
+              loading="lazy"
+            />
+            <h2>
+              One engineering partner.
+              <br />
+              <span className="muted">Connected solutions.</span>
+            </h2>
+            <p className="lead">
+              Your website, software and operations shouldn’t feel like separate conversations.
+            </p>
+            <p>
+              At {brand.name}, design decisions and technical decisions happen together. You work
+              directly with the person building your system, with a clear scope and a practical view
+              of what comes next.
+            </p>
+            <TextLink href="/about">Meet the approach</TextLink>
+          </div>
+          <span className="statement-word" aria-hidden="true">
+            Build
+          </span>
         </div>
-        <div>
-          <p className="lead">
-            Your website, software and operations shouldn’t feel like separate conversations.
-          </p>
-          <p>
-            At {brand.name}, design decisions and technical decisions happen together. You work
-            directly with the person building your system, with a clear scope and a practical view
-            of what comes next.
-          </p>
-          <ul className="reasons">
-            {reasons.map((reason) => (
-              <li key={reason}>
-                <Check size={16} />
-                {reason}
-              </li>
-            ))}
-          </ul>
-          <TextLink href="/about">Meet the approach</TextLink>
-        </div>
+        <ul className="reasons">
+          {reasons.map((reason) => (
+            <li key={reason}>
+              <Check size={16} />
+              {reason}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
 }
 export function ProcessPreview() {
   return (
-    <section className="section shell">
-      <SectionHeading label="How we work" number="04" title="A clear path from idea to production.">
-        <TextLink href="/process">Inside the process</TextLink>
-      </SectionHeading>
-      <ol className="process-preview">
-        {processSteps.map((step, index) => (
-          <li key={step.name}>
-            <div className="process-rule">
-              <span className="mono">0{index + 1}</span>
-              <Plus size={14} />
-            </div>
-            <h3>{step.name}</h3>
-            <p>{step.text}</p>
-          </li>
-        ))}
-      </ol>
+    <section className="section home-process" id="path" data-reveal>
+      <div className="shell">
+        <SectionHeading
+          label="How we work"
+          number="03"
+          title="A clear path from idea to production."
+        >
+          <TextLink href="/process">Inside the process</TextLink>
+        </SectionHeading>
+        <ol className="process-preview">
+          {processSteps.map((step, index) => (
+            <li key={step.name}>
+              <div className="process-rule">
+                <span className="mono">0{index + 1}</span>
+                <Plus size={14} />
+              </div>
+              <h3>{step.name}</h3>
+              <p>{step.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
     </section>
   );
 }
@@ -170,10 +237,10 @@ export function IndustriesPreview() {
     },
   ];
   return (
-    <section className="section shell industries-preview">
+    <section className="section shell industries-preview" data-reveal>
       <SectionHeading
         label="Where we can help"
-        number="05"
+        number="04"
         title="Different businesses. Real-world challenges."
       >
         <p>

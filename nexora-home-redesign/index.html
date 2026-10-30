@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEXORA | Independent digital engineering studio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;700&display=swap">
+<style>
+body{margin:0;background:#0a0a0a}
+.nx{font-family:'Manrope',sans-serif;color:#f1ead6;background:#0a0a0a;overflow:hidden;line-height:1.5}
+.nx *{box-sizing:border-box}
+.d{font-family:'Anton','Bebas Neue',Impact,sans-serif;text-transform:uppercase;line-height:.92;font-weight:400;margin:0}
+.m{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#aaa28c}
+.w{max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.pill{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid #f1ead6;color:#f1ead6;text-decoration:none;font-weight:700;font-size:14px}
+.pill.f{background:#f1ead6;color:#0a0a0a}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 0;flex-wrap:wrap}
+.nav nav{display:flex;gap:28px;flex-wrap:wrap}
+.nav nav a{color:#f1ead6;text-decoration:none;font-size:14px}
+.hero{position:relative;padding-bottom:40px}
+.ring{position:absolute;border:1px solid #2e2b25;border-radius:50%;left:50%;transform:translateX(-50%)}
+.strip{position:absolute;top:60px;width:clamp(140px,15vw,220px);height:360px;object-fit:cover;border:1px solid #3a372f}
+.hand{display:block;margin:0 auto;position:relative;width:min(500px,72vw);height:560px;object-fit:cover;-webkit-mask-image:linear-gradient(#000 62%,transparent);mask-image:linear-gradient(#000 62%,transparent)}
+.hero h1{position:relative;text-align:center;font-size:clamp(60px,12.5vw,190px);margin-top:-210px}
+.sub{max-width:520px;margin:28px auto 0;text-align:center;font-size:18px;color:#d9d2bd}
+.cta{display:flex;gap:14px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.sec{padding:110px 0}
+.big{font-size:clamp(44px,7vw,104px)}
+.stm{display:grid;grid-template-columns:1fr minmax(260px,400px) 1fr;align-items:center;gap:24px}
+.stm .d{font-size:clamp(90px,17vw,260px)}
+.stm .r{text-align:right}
+.sticker{display:block;width:100%;max-width:340px;margin:0 auto 20px;transform:rotate(-6deg)}
+.arcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:56px}
+.arch{border:1px solid #4a463c;border-radius:240px 240px 26px 26px;padding:90px 28px 30px;min-height:430px;display:flex;flex-direction:column;justify-content:flex-end;gap:12px}
+.arch h3{font-family:'Anton',Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:38px;line-height:1;margin:0}
+.arch p{margin:0;color:#c9c2ad}
+.arch.on{background:#f1ead6;color:#0a0a0a}
+.arch.on p,.arch.on .m{color:#2a2822}
+.work{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:56px}
+.work img{width:100%;max-height:640px;object-fit:cover;border:1px solid #3a372f;border-radius:26px}
+.lt{background:#e7ebf1;color:#0e0e10}
+.lt .m{color:#4a5260}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:56px}
+.st{border:1px solid #0e0e10;border-radius:24px;padding:24px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between;gap:30px}
+.st.k{background:#0e0e10;color:#f1ead6}
+.st.k .m{color:#b9b29b}
+.st h3{margin:0 0 8px;font-size:24px}
+.st p{margin:0;font-size:14px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:48px}
+.ind{border:1px solid #4a463c;border-radius:26px;padding:34px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.tags span{border:1px solid #4a463c;border-radius:999px;padding:8px 18px;font-size:14px}
+.end{position:relative;text-align:center;padding:140px 0}
+.end h2{position:relative;font-size:clamp(54px,10vw,160px)}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;padding:60px 0;border-top:1px solid #2e2b25}
+.ft a{display:block;color:#d9d2bd;text-decoration:none;font-size:14px;margin-top:10px}
+@media (max-width:900px){.strip{display:none}.stm{grid-template-columns:1fr;text-align:center}.stm .r{text-align:center}.work{grid-template-columns:1fr}.ft{grid-template-columns:1fr 1fr}.hand{height:420px}.hero h1{margin-top:-150px}}
+</style>
+</head>
+<body>
+<div class="nx">
+
+<div class="hero">
+<div class="ring" style="width:620px;height:620px;top:90px"></div>
+<div class="ring" style="width:880px;height:880px;top:-30px"></div>
+<img class="strip" style="left:3vw" src="assets/glitch.jpg" alt="A person at a desk dissolving into streaming screens">
+<img class="strip" style="right:3vw;object-fit:contain;border:0;transform:rotate(7deg)" src="assets/laptop.jpg" alt="Halftone hands typing on a laptop">
+<div class="w">
+<div class="nav">
+<span class="d" style="font-size:30px;letter-spacing:.06em">Nexora</span>
+<nav><a href="#work">Services</a><a href="#work">Work</a><a href="#path">Process</a><a href="#end">Contact</a></nav>
+<a class="pill" href="#end">Start a project <span aria-hidden="true">↗</span></a>
+</div>
+<div class="m" style="text-align:center;margin-top:34px">Independent digital engineering studio</div>
+<img class="hand" src="assets/hand.jpg" alt="A halftone hand shaking a wireframe hand">
+<h1 class="d">Built around<br>your business<span style="color:#ff7a3d">.</span></h1>
+<p class="sub">We build the digital systems that help businesses move forward. Websites, custom software and intelligent automation, working as one.</p>
+<div class="cta"><a class="pill f" href="#end">Start a project <span aria-hidden="true">↗</span></a><a class="pill" href="#work">Explore our work</a></div>
+</div>
+</div>
+
+<div class="sec" id="about"><div class="w">
+<div class="stm">
+<div class="d">We</div>
+<div style="text-align:center">
+<img class="sticker" src="assets/brain.jpg" alt="Halftone brain sticker">
+<p style="margin:0;font-weight:700;font-size:18px;text-transform:uppercase">One engineering partner. Connected solutions.</p>
+<p style="margin:12px 0 0;color:#c9c2ad;font-size:15px">Your website, software and operations shouldn’t feel like separate conversations. You work directly with the person building your system, with a clear scope and a practical view of what comes next.</p>
+</div>
+<div class="d r">Build</div>
+</div>
+</div></div>
+
+<div class="sec" id="work" style="padding-top:20px"><div class="w">
+<div class="m">01 — Our capabilities</div>
+<h2 class="d big" style="margin-top:14px">Everything your business needs<br>to operate digitally.</h2>
+<div class="arcs">
+<div class="arch on"><span class="m">01</span><h3>Web Engineering</h3><p>A better first impression. A stronger foundation for growth.</p><span aria-hidden="true">↗</span></div>
+<div class="arch"><span class="m">02</span><h3>Software Engineering</h3><p>Software shaped around the way your business actually works.</p><span aria-hidden="true">↗</span></div>
+<div class="arch"><span class="m">03</span><h3>AI &amp; Automation</h3><p>Less repetitive work. More room for the work that matters.</p><span aria-hidden="true">↗</span></div>
+<div class="arch"><span class="m">04</span><h3>Digital Infrastructure</h3><p>A dependable home for the systems your business relies on.</p><span aria-hidden="true">↗</span></div>
+</div>
+</div></div>
+
+<div class="sec" style="padding-top:20px"><div class="w">
+<div class="m">02 — Selected work</div>
+<div class="work">
+<div>
+<h2 class="d big">Built with purpose. Engineered to perform.</h2>
+<p class="m" style="margin-top:32px">Independent project / Web engineering</p>
+<h3 class="d" style="font-size:40px;margin-top:10px">Nexora / The studio website</h3>
+<p style="color:#c9c2ad;max-width:460px">A considered digital home for an independent engineering practice. Brand, design, content and a connected enquiry system.</p>
+<p class="m" style="margin-top:18px">Next.js / TypeScript / PostgreSQL</p>
+<p style="color:#aaa28c;font-size:13px;max-width:460px">This is an independent studio build. No client engagement or commercial outcome is implied. More work will be published when it can be documented accurately.</p>
+<a class="pill f" href="#end">Read the case study <span aria-hidden="true">↗</span></a>
+</div>
+<img src="assets/mech.jpg" alt="An illustrated mechanical hand holding a small glowing globe">
+</div>
+</div></div>
+
+<div class="sec lt" id="path"><div class="w">
+<div class="m">03 — How we work</div>
+<h2 class="d big" style="margin-top:14px">A clear path from idea to production.</h2>
+<div class="steps">
+<div class="st"><span class="m">01</span><div><h3>Discover</h3><p>Understand your business, the people using the system and the problem worth solving.</p></div></div>
+<div class="st k"><span class="m">02</span><div><h3>Define</h3><p>Turn the goal into a clear scope, considered design and a practical technical approach.</p></div></div>
+<div class="st"><span class="m">03</span><div><h3>Engineer</h3><p>Build in focused increments. Review working software and make informed decisions together.</p></div></div>
+<div class="st k"><span class="m">04</span><div><h3>Launch</h3><p>Test the details, prepare the production environment and make the handover clear.</p></div></div>
+<div class="st"><span class="m">05</span><div><h3>Support</h3><p>Keep the system dependable, address issues and make room for what comes next.</p></div></div>
+</div>
+</div></div>
+
+<div class="sec"><div class="w">
+<div class="m">04 — Where we can help</div>
+<h2 class="d big" style="margin-top:14px">Different businesses.<br>Real-world challenges.</h2>
+<div class="two">
+<div class="ind"><h3 class="d" style="font-size:44px">Startups</h3><p style="margin:0;color:#c9c2ad">From a clear idea to a focused first release.</p></div>
+<div class="ind"><h3 class="d" style="font-size:44px">Small businesses</h3><p style="margin:0;color:#c9c2ad">Better websites. Fewer manual workarounds.</p></div>
+</div>
+<div class="tags"><span>Professional services</span><span>E-commerce</span><span>Real estate</span><span>Healthcare businesses</span></div>
+<p style="color:#aaa28c;font-size:13px">These are sectors we can serve, not a list of existing clients.</p>
+</div></div>
+
+<div class="end" id="end">
+<div class="ring" style="width:760px;height:760px;top:-60px"></div>
+<div class="w">
+<div class="m">Let’s make it happen</div>
+<h2 class="d" style="margin-top:20px">Have something<br>worth building<span style="color:#ff7a3d">?</span></h2>
+<p class="sub">Tell us what you’re trying to achieve. We’ll help you work out the right technology and build a solution around it.</p>
+<div class="cta"><a class="pill f" href="#end">Start a project <span aria-hidden="true">↗</span></a></div>
+</div>
+</div>
+
+<div class="w"><div class="ft">
+<div><span class="d" style="font-size:30px;letter-spacing:.06em">Nexora</span><p style="color:#aaa28c;font-size:14px;max-width:300px">An independent digital engineering studio specialising in web engineering, software development and intelligent automation.</p></div>
+<div><span class="m">Capabilities</span><a href="#work">Web Engineering</a><a href="#work">Software Engineering</a><a href="#work">AI &amp; Automation</a><a href="#work">Digital Infrastructure</a></div>
+<div><span class="m">Studio</span><a href="#about">Our approach</a><a href="#work">Selected work</a><a href="#path">How we work</a></div>
+<div><span class="m">Let’s talk</span><a href="#end">Start a project ↗</a><p style="color:#aaa28c;font-size:13px">Based on clear thinking. Built for what comes next.</p></div>
+</div>
+<p class="m" style="padding-bottom:30px">© 2026 Nexora</p></div>
+
+</div>
+</body>
+</html>

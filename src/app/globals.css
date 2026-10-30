@@ -201,6 +201,9 @@ ol {
   width: 143px;
   height: auto;
 }
+.editorial-wordmark {
+  display: none;
+}
 .brand-link {
   display: flex;
   align-items: center;

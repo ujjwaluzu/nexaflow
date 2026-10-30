@@ -1,6 +1,6 @@
 import { ArrowDownRight } from 'lucide-react';
-import { HeroGraphic } from '@/components/hero-graphic';
-import { Button, FinalCTA, Label } from '@/components/ui';
+import { HomeHeroArt, RevealOnScroll } from '@/components/home-art';
+import { Button, FinalCTA } from '@/components/ui';
 import {
   Capabilities,
   IndustriesPreview,
@@ -10,13 +10,15 @@ import {
 } from '@/components/sections';
 import { metadata as makeMetadata } from '@/lib/seo';
 import { brand } from '@/config/brand';
+import './home.css';
 export const metadata = makeMetadata(brand.heroHeadline.join(' '), brand.description, '/');
 export default function Home() {
   return (
-    <>
-      <section className="hero shell">
-        <div className="hero-copy">
-          <Label>Independent digital engineering studio</Label>
+    <div className="home-page">
+      <RevealOnScroll />
+      <section className="home-hero">
+        <div className="shell hero-copy">
+          <HomeHeroArt />
           <h1>
             {brand.heroHeadline.map((line, index) => (
               <span key={index}>
@@ -38,20 +40,19 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <HeroGraphic />
-        <div className="hero-baseline">
+        <div className="hero-baseline shell">
           <span className="mono">Clear thinking. Considered design. Dependable engineering.</span>
           <a href="#capabilities" className="mono">
             Explore the studio <ArrowDownRight size={17} />
           </a>
         </div>
       </section>
-      <Capabilities />
-      <SelectedWork />
       <WhyStudio />
+      <Capabilities />
+      <SelectedWork editorial />
       <ProcessPreview />
       <IndustriesPreview />
-      <FinalCTA />
-    </>
+      <FinalCTA editorial />
+    </div>
   );
 }
