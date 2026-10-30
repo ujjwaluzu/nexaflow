@@ -59,12 +59,14 @@ test('navigation and project links work', async ({ page, isMobile }) => {
 test('home artwork and FAQ disclosures are accessible', async ({ page }) => {
   await page.goto('/');
   await expect(
-    page.getByRole('img', { name: 'A halftone hand shaking a wireframe hand' }),
+    page.getByRole('img', {
+      name: 'Black-and-cream halftone globe sticker on a stand, showing Africa and Europe',
+    }),
   ).toBeVisible();
   await page.evaluate(() => document.fonts.ready);
-  const hand = await page.locator('.hero-hand').boundingBox();
+  const art = await page.locator('.hero-main-art').boundingBox();
   const statement = await page.locator('.hero-statement').boundingBox();
-  expect(hand!.y + hand!.height, 'hero art clears the body copy').toBeLessThanOrEqual(statement!.y);
+  expect(art!.y + art!.height, 'hero art clears the body copy').toBeLessThanOrEqual(statement!.y);
   for (const image of await page.locator('.home-page img').all()) {
     await expect(image).toHaveAttribute('alt', /.+/);
     await expect(image).toHaveAttribute('width', /^[1-9]\d*$/);
@@ -145,9 +147,9 @@ test('mobile menu supports keyboard dismissal', async ({ page, isMobile }) => {
 test('home motion follows reduced-motion preferences', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('/');
-  await expect(page.locator('.hero-hand')).toHaveCSS('animation-name', 'home-art-float');
+  await expect(page.locator('.hero-main-art')).toHaveCSS('animation-name', 'home-art-float');
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await expect(page.locator('.hero-hand')).toHaveCSS('animation-name', 'none');
+  await expect(page.locator('.hero-main-art')).toHaveCSS('animation-name', 'none');
   for (const section of await page.locator('.home-page [data-reveal]').all()) {
     await expect(section).toHaveCSS('opacity', '1');
     await expect(section).toHaveCSS('transform', 'none');

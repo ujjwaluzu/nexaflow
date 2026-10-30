@@ -1,0 +1,11 @@
+{
+  "tool": "Built-in image_gen",
+  "transparent_background": true,
+  "source": "public/art/eb023b6985ea6699a0d710ed11aecd8e.jpg",
+  "style_references": [
+    "public/art/glitch-halftone-transparent.webp",
+    "public/art/mech-halftone-transparent.webp"
+  ],
+  "output": "public/art/globe-halftone-transparent.webp",
+  "prompt": "Use case: style-transfer and background-extraction. Asset type: NEXORA website hero illustration. Input image 1 is the EDIT TARGET: an engraved desktop globe on its stand, showing Africa and Europe, with a torn paper sticker rim and a baked-in dark checkerboard background. Input images 2 (glitch sticker) and 3 (mechanical-hand sticker) are STYLE REFERENCES ONLY; do not incorporate their subjects. Restyle the globe so it belongs to exactly the same handmade black-and-cream halftone sticker family: near-black #0a0a0a and warm cream #f1ead6 inks only, bold coarse screenprint halftone dots, printed stippling and light engraving texture, high contrast, and an irregular warm cream die-cut rim around the complete globe and stand. Preserve the original globe shape and orientation, visible Africa/Europe geography, latitude/longitude lines, meridian support arc, pedestal and oval base, and the overall frontal three-quarter composition. Remove the baked-in checkerboard background completely and replace it with a genuinely transparent RGBA alpha channel, including openings between the meridian arc, globe and stand. Preserve opaque black ink within the globe and base. Keep the entire sticker, rim, arc and pedestal inside the canvas with a small transparent margin. Keep the square composition. No dark rectangular panel, no painted checkerboard, no replacement background, no added text, no logos, no extra objects, no gradients, no photographic colour and no drop shadow. The result should look like another sticker from the same collection as the two style references, suitable for a hero illustration at about 500px wide."
+}

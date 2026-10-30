@@ -13,3 +13,5 @@ The original five home page illustrations in `public/art/` are WebP conversions 
 The `glitch-halftone-transparent.webp` variant was restyled with the same tool to match the site's black-and-cream halftone sticker artwork. The source, style references and prompt are documented in `docs/glitch-art-theme.json`.
 
 The `mech-halftone-transparent.webp` variant uses the same black-and-cream halftone sticker treatment. Its source, style references and prompt are documented in `docs/mech-art-theme.json`.
+
+The hero globe in `globe-halftone-transparent.webp` was restyled from the supplied `eb023b6985ea6699a0d710ed11aecd8e.jpg` reference with the same tool, replacing its baked-in checkerboard with transparency. Its source, style references and prompt are documented in `docs/globe-art-theme.json`.

@@ -3,6 +3,7 @@
   "name": "nexora-studio",
   "main": ".open-next/worker.js",
   "minify": true,
+  "keep_vars": true,
   "compatibility_date": "2026-10-30",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },

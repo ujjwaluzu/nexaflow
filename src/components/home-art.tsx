@@ -12,14 +12,14 @@ export function HomeHeroArt() {
         width={686}
         height={919}
         alt="Black-and-cream halftone sticker of a person at a desk dissolving into streaming screens"
-        sizes="15vw"
+        sizes="9.64vw"
       />
       <Image
-        className="hero-hand"
-        src="/art/hand-transparent.webp"
-        width={738}
-        height={919}
-        alt="A halftone hand shaking a wireframe hand"
+        className="hero-main-art"
+        src="/art/globe-halftone-transparent.webp"
+        width={820}
+        height={820}
+        alt="Black-and-cream halftone globe sticker on a stand, showing Africa and Europe"
         sizes="(max-width: 700px) 72vw, 500px"
         loading="eager"
         fetchPriority="high"
