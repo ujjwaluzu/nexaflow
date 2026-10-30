@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect } from 'react';
+import { SpinningGlobe } from './spinning-globe';
 
 export function HomeHeroArt() {
   return (
@@ -14,16 +15,7 @@ export function HomeHeroArt() {
         alt="Black-and-cream halftone sticker of a person at a desk dissolving into streaming screens"
         sizes="9.64vw"
       />
-      <Image
-        className="hero-main-art"
-        src="/art/globe-halftone-transparent.webp"
-        width={820}
-        height={820}
-        alt="Black-and-cream halftone globe sticker on a stand, showing Africa and Europe"
-        sizes="(max-width: 700px) 72vw, 500px"
-        loading="eager"
-        fetchPriority="high"
-      />
+      <SpinningGlobe />
       <Image
         className="hero-strip hero-laptop"
         src="/art/laptop-transparent.webp"

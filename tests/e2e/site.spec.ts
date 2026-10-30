@@ -60,7 +60,7 @@ test('home artwork and FAQ disclosures are accessible', async ({ page }) => {
   await page.goto('/');
   await expect(
     page.getByRole('img', {
-      name: 'Black-and-cream halftone globe sticker on a stand, showing Africa and Europe',
+      name: 'A rotating world globe in warm cream and charcoal on a sculpted stand',
     }),
   ).toBeVisible();
   await page.evaluate(() => document.fonts.ready);

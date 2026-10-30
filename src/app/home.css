@@ -224,9 +224,17 @@ body:has(.home-page) :focus-visible {
   position: relative;
   width: min(500px, 72vw);
   height: 560px;
-  object-fit: contain;
   margin-inline: auto;
-  animation: home-art-float 10s ease-in-out infinite;
+}
+
+.hero-globe-frame {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: visible;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .hero-strip {
@@ -697,16 +705,6 @@ body:has(.home-page) .cookie-settings {
 .home-page .reveal-pending:focus-within {
   opacity: 1;
   transform: none;
-}
-
-@keyframes home-art-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
 }
 
 @media (max-width: 1100px) {

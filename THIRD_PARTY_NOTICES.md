@@ -1,5 +1,7 @@
 # Third-party materials
 
+`public/art/globe-land.json` contains rounded Natural Earth 1:110m land polygons. `src/lib/globe-initial.json` contains the initial SVG projection of that map. Natural Earth data is public domain: https://www.naturalearthdata.com/about/terms-of-use/. Source: https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_land.geojson. The globe uses d3-geo (ISC licence, retained in its package) for spherical projection; its SVG illustration and animation are original code.
+
 `scripts/lib/iso-kit.mjs` is from the Anatomy skill by its respective contributors, supplied under the MIT licence. It is used only to precompute the original brand illustration in `scripts/build-brand.mjs`.
 
 MIT License: Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to inclusion of this notice. THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
