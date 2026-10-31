@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, Check, Plus } from 'lucide-react';
+import { ArrowUpRight, Plus } from 'lucide-react';
 import { services } from '@/data/services';
 import { processSteps } from '@/data/process';
 import { brand } from '@/config/brand';
@@ -130,11 +130,26 @@ export function SelectedWork({
 }
 export function WhyStudio() {
   const reasons = [
-    'Built around your business requirements',
-    'Direct communication with the engineer',
-    'Connected web, software and automation',
-    'Maintainable code and clear documentation',
-    'A foundation for a long-term partnership',
+    {
+      title: 'Business first',
+      text: 'Scope shaped around your goals, users and constraints.',
+    },
+    {
+      title: 'Direct by design',
+      text: 'Talk with the engineer making the decisions and building your system.',
+    },
+    {
+      title: 'One connected system',
+      text: 'Web, software and automation planned to work together.',
+    },
+    {
+      title: 'Made to be maintained',
+      text: 'Readable code, useful documentation and a clear handover.',
+    },
+    {
+      title: 'Built for what comes next',
+      text: 'A solid foundation and a lasting engineering partnership.',
+    },
   ];
   return (
     <section className="section home-statement" id="about" data-reveal>
@@ -173,10 +188,11 @@ export function WhyStudio() {
           </span>
         </div>
         <ul className="reasons">
-          {reasons.map((reason) => (
-            <li key={reason}>
-              <Check size={16} />
-              {reason}
+          {reasons.map((reason, index) => (
+            <li key={reason.title}>
+              <span className="reason-index mono">0{index + 1}</span>
+              <h3>{reason.title}</h3>
+              <p>{reason.text}</p>
             </li>
           ))}
         </ul>
