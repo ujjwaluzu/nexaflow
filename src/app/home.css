@@ -133,7 +133,7 @@
   width: 100%;
   aspect-ratio: 1;
   overflow: visible;
-  transform: translateY(-50%);
+  transform: translateY(calc(-50% + 32px));
   pointer-events: none;
 }
 

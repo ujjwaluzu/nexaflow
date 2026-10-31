@@ -49,12 +49,14 @@ export function Navigation() {
   const path = usePathname();
   const [open, setOpen] = useState(false);
   const [activeHref, setActiveHref] = useState<string | null>(null);
+  const [displayedHref, setDisplayedHref] = useState<string | null>(null);
   const toggle = useRef<HTMLButtonElement>(null);
   const panel = useRef<HTMLDivElement>(null);
   const header = useRef<HTMLElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const activeItem = site.navigation.find((item) => item.href === activeHref);
-  const activeContent = activeHref ? menuContent[activeHref] : null;
+  const touchActivation = useRef(false);
+  const activeItem = site.navigation.find((item) => item.href === displayedHref);
+  const activeContent = displayedHref ? menuContent[displayedHref] : null;
 
   const cancelScheduledClose = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -69,6 +71,30 @@ export function Navigation() {
     setActiveHref(null);
     setOpen(false);
   };
+
+  useEffect(() => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = null;
+    setActiveHref(null);
+    setOpen(false);
+  }, [path]);
+
+  useEffect(() => {
+    if (activeHref) {
+      setDisplayedHref(activeHref);
+      return;
+    }
+
+    const timer = setTimeout(() => setDisplayedHref(null), 360);
+    return () => clearTimeout(timer);
+  }, [activeHref]);
+
+  useEffect(
+    () => () => {
+      if (closeTimer.current) clearTimeout(closeTimer.current);
+    },
+    [],
+  );
 
   useEffect(() => {
     if (!activeHref) return;
@@ -108,22 +134,41 @@ export function Navigation() {
         }
       }
     };
+    const onOutsideClick = (event: PointerEvent) => {
+      if (event.target instanceof Node && !header.current?.contains(event.target)) setOpen(false);
+    };
     document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
+    document.addEventListener('pointerdown', onOutsideClick);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('pointerdown', onOutsideClick);
+    };
   }, [open]);
 
   useEffect(() => {
     const media = window.matchMedia('(min-width: 900px)');
     const close = () => {
-      if (media.matches) setOpen(false);
-      else setActiveHref(null);
+      setOpen(false);
+      setActiveHref(null);
     };
     media.addEventListener('change', close);
     return () => media.removeEventListener('change', close);
   }, []);
 
   return (
-    <header className="site-header" ref={header} onMouseEnter={cancelScheduledClose} onMouseLeave={scheduleClose}>
+    <header
+      className="site-header"
+      ref={header}
+      onPointerEnter={(event) => {
+        if (event.pointerType === 'mouse') cancelScheduledClose();
+      }}
+      onPointerLeave={(event) => {
+        if (event.pointerType === 'mouse') scheduleClose();
+      }}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setActiveHref(null);
+      }}
+    >
       <div className="shell nav-shell">
         <Link href="/" className="brand-link" aria-label={`${brand.name} home`} onClick={closeMenu}>
           <Wordmark />
@@ -139,11 +184,25 @@ export function Navigation() {
                 aria-expanded={selected}
                 aria-controls="nav-mega-panel"
                 aria-current={path === item.href || path.startsWith(`${item.href}/`) ? 'page' : undefined}
-                onMouseEnter={() => setActiveHref(item.href)}
-                onFocus={() => setActiveHref(item.href)}
+                onPointerEnter={(event) => {
+                  if (event.pointerType === 'mouse') setActiveHref(item.href);
+                }}
+                onPointerDown={(event) => {
+                  touchActivation.current = event.pointerType === 'touch';
+                }}
+                onPointerCancel={() => {
+                  touchActivation.current = false;
+                }}
+                onFocus={() => {
+                  if (!touchActivation.current) setActiveHref(item.href);
+                }}
                 onClick={() => {
-                  if (window.matchMedia('(hover: none)').matches && selected) setActiveHref(null);
-                  else setActiveHref(item.href);
+                  if (touchActivation.current) {
+                    setActiveHref((current) => (current === item.href ? null : item.href));
+                  } else {
+                    setActiveHref(item.href);
+                  }
+                  touchActivation.current = false;
                 }}
               >
                 {item.label}
@@ -160,17 +219,21 @@ export function Navigation() {
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           aria-controls="mobile-navigation"
-          onClick={() => setOpen(!open)}
+          onClick={() => {
+            setActiveHref(null);
+            setOpen((current) => !current);
+          }}
         >
           {open ? <X /> : <Menu />}
         </button>
       </div>
       <div
         id="nav-mega-panel"
-        className={`nav-mega-panel${activeContent ? ' is-open' : ''}`}
+        className={`nav-mega-panel${activeHref ? ' is-open' : ''}`}
+        role="region"
         aria-label={activeItem ? `${activeItem.label} navigation` : undefined}
-        aria-hidden={!activeContent}
-        inert={!activeContent}
+        aria-hidden={!activeHref}
+        inert={!activeHref}
       >
         <div className="nav-mega-reveal">
           {activeItem && activeContent && (
