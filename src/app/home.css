@@ -289,7 +289,7 @@ body:has(.home-page) :focus-visible {
   position: relative;
   z-index: 1;
   margin-top: -210px;
-  font-size: clamp(60px, 12.5vw, 190px);
+  font-size: clamp(60px, 11.8vw, 180px);
   /* A narrow dark halo keeps cream letter edges legible over the halftone. */
   -webkit-text-stroke: 3px #0a0a0a;
   paint-order: stroke fill;
@@ -832,7 +832,7 @@ body:has(.home-page) .cookie-settings {
 
   .home-page .home-hero h1 {
     margin-top: -100px;
-    font-size: clamp(44px, 14vw, 88px);
+    font-size: clamp(44px, 13.2vw, 82px);
   }
 
   .home-page .hero-description {
