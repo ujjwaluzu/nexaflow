@@ -146,7 +146,7 @@ export function Navigation() {
   }, [open]);
 
   useEffect(() => {
-    const media = window.matchMedia('(min-width: 900px)');
+    const media = window.matchMedia('(min-width: 1024px)');
     const close = () => {
       setOpen(false);
       setActiveHref(null);

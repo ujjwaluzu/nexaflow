@@ -143,6 +143,7 @@
   align-items: center;
   gap: clamp(32px, 10vw, 140px);
   margin-bottom: 16px;
+  padding-inline: clamp(6px, 1.5vw, 16px);
 }
 
 .hero-word-image {
@@ -231,7 +232,7 @@
 }
 
 .home-page .statement-word {
-  font-size: clamp(90px, 15vw, 230px);
+  font-size: clamp(72px, 12.8vw, 198px);
 }
 
 .home-page .statement-word:last-child {
@@ -425,7 +426,7 @@
 }
 
 .home-page .capability-row h3 {
-  font-size: 38px;
+  font-size: clamp(28px, 2.65vw, 38px);
   line-height: 1;
 }
 
@@ -703,7 +704,9 @@
     width: 100%;
     margin-inline: auto;
   }
-
+  .home-page .reasons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 639px) {
@@ -747,7 +750,7 @@
   }
 
   .home-page .reasons {
-    gap: 0;
+    gap: 16px;
   }
 
   .home-page .capability-row {
@@ -761,7 +764,7 @@
 
   .home-page .capability-row h3 {
     max-width: 280px;
-    font-size: 44px;
+    font-size: clamp(32px, 9.5vw, 44px);
   }
 
   .home-project-info > .text-link {

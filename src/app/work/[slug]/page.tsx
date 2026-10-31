@@ -91,7 +91,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             width={430}
             height={732}
             alt={project.gallery[0].alt}
-            style={{ maxWidth: 330, marginInline: 'auto', border: '1px solid var(--border)' }}
+            style={{
+              width: '100%',
+              maxWidth: 330,
+              marginInline: 'auto',
+              border: '1px solid var(--border)',
+            }}
           />
         </section>
         {project.githubUrl && <Button href={project.githubUrl}>Explore the source</Button>}
