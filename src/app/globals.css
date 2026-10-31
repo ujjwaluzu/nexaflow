@@ -145,7 +145,7 @@ ol {
   margin-inline: auto;
 }
 .section {
-  padding-block: 112px;
+  padding-block: 88px;
 }
 .mono,
 .eyebrow {
@@ -1931,7 +1931,7 @@ a:hover {
   }
   .nav-mega-panel { display: none; }
   .section {
-    padding-block: 80px;
+    padding-block: 68px;
   }
   .hero {
     grid-template-columns: 1fr 1fr;
@@ -2181,7 +2181,7 @@ a:hover {
     gap: 10px;
   }
   .section {
-    padding-block: 70px;
+    padding-block: 56px;
   }
   .section-heading {
     display: block;

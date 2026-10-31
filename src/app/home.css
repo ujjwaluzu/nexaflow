@@ -40,7 +40,7 @@
 }
 
 .home-page .section {
-  padding-block: 110px;
+  padding-block: 88px;
 }
 
 .home-page .section-heading {
@@ -566,7 +566,7 @@
 
 .home-page .home-final-cta {
   position: relative;
-  padding-block: 140px;
+  padding-block: 88px;
   border: 0;
   text-align: center;
 }
@@ -631,6 +631,11 @@
 }
 
 @media (max-width: 900px) {
+  .home-page .section,
+  .home-page .home-final-cta {
+    padding-block: 68px;
+  }
+
   .hero-word-glitch {
     transform: translateY(-24px);
   }
@@ -666,7 +671,11 @@
 
 @media (max-width: 639px) {
   .home-page .section {
-    padding-block: 70px;
+    padding-block: 56px;
+  }
+
+  .home-page .home-final-cta {
+    padding-block: 56px;
   }
 
   .hero-main-art {
@@ -730,10 +739,6 @@
 
   .home-page .industry-links a {
     padding: 28px;
-  }
-
-  .home-page .home-final-cta {
-    padding-block: 100px;
   }
 
   .home-page .home-final-cta h2 {
