@@ -4,6 +4,7 @@ import { ArrowUpRight, Plus } from 'lucide-react';
 import { services } from '@/data/services';
 import { processSteps } from '@/data/process';
 import { brand } from '@/config/brand';
+import { StudioDroid } from './studio-droid';
 import { Button, SectionHeading, ServiceIcon, TextLink, EmptyProjectNote } from './ui';
 export function Capabilities() {
   return (
@@ -74,20 +75,9 @@ export function SelectedWork({
               <TextLink href="/work">Explore our work</TextLink>
             </div>
           </div>
-          <Link
-            className="home-work-art"
-            href="/work/studio-website"
-            aria-label={`View the ${brand.name} studio website case study`}
-          >
-            <Image
-              src="/art/mech-halftone-transparent.webp"
-              width={730}
-              height={919}
-              alt="Black-and-cream halftone sticker of a mechanical hand holding a small globe"
-              sizes="(max-width: 900px) 100vw, 50vw"
-              loading="lazy"
-            />
-          </Link>
+          <div className="home-work-art">
+            <StudioDroid />
+          </div>
         </div>
       </section>
     );

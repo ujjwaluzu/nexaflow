@@ -478,10 +478,172 @@
   display: block;
 }
 
-.home-work-art img {
+.home-work-art .studio-droid {
+  display: block;
   width: 100%;
   max-height: 640px;
-  object-fit: contain;
+  overflow: visible;
+}
+
+.studio-droid-suspension {
+  transform-origin: 160px 245px;
+  animation: studio-droid-suspension 8s ease-in-out infinite;
+}
+
+.studio-droid-body {
+  transform-origin: 160px 426px;
+  animation: studio-droid-balance 9s ease-in-out infinite;
+}
+
+.studio-droid-head {
+  transform-origin: 160px 146px;
+  animation: studio-droid-head 9s ease-in-out infinite;
+}
+
+.studio-droid-scan {
+  animation: studio-droid-scan 12s ease-in-out infinite;
+}
+
+.studio-droid-eye {
+  transform-origin: 160px 106px;
+  animation: studio-droid-eye 8s ease-in-out infinite;
+}
+
+.studio-droid-status {
+  animation: studio-droid-status 3s steps(1, end) infinite;
+}
+
+.studio-droid-progress {
+  stroke-dasharray: 74;
+  animation: studio-droid-progress 6s ease-in-out infinite;
+}
+
+.studio-droid-centre-leg {
+  animation: studio-droid-deploy 12s ease-in-out infinite;
+}
+
+.studio-droid-wheel {
+  transform-origin: 160px 414px;
+  animation: studio-droid-wheel 12s ease-in-out infinite;
+}
+
+/* Match the globe: pause out of view and keep a complete still pose without JS. */
+.studio-droid:not([data-running='true']) g,
+.studio-droid:not([data-running='true']) path,
+.studio-droid:not([data-running='true']) rect {
+  animation-play-state: paused;
+}
+
+@keyframes studio-droid-suspension {
+  0%,
+  100% {
+    transform: translate(-7px, 0) rotate(5deg);
+  }
+  50% {
+    transform: translate(7px, -4px) rotate(-5deg);
+  }
+}
+
+@keyframes studio-droid-balance {
+  0%,
+  100% {
+    transform: rotate(-0.8deg);
+  }
+  50% {
+    transform: rotate(0.8deg);
+  }
+}
+
+@keyframes studio-droid-head {
+  0%,
+  100% {
+    transform: rotate(0.8deg);
+  }
+  50% {
+    transform: rotate(-0.8deg);
+  }
+}
+
+@keyframes studio-droid-scan {
+  0%,
+  12%,
+  100% {
+    transform: translateX(0);
+  }
+  28%,
+  40% {
+    transform: translateX(-12px);
+  }
+  62%,
+  76% {
+    transform: translateX(12px);
+  }
+}
+
+@keyframes studio-droid-eye {
+  0%,
+  90%,
+  96%,
+  100% {
+    transform: scaleY(1);
+  }
+  93% {
+    transform: scaleY(0.15);
+  }
+}
+
+@keyframes studio-droid-status {
+  0%,
+  65%,
+  100% {
+    opacity: 1;
+  }
+  70%,
+  95% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes studio-droid-progress {
+  0%,
+  100% {
+    stroke-dashoffset: 56;
+  }
+  65% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes studio-droid-deploy {
+  0%,
+  30%,
+  90%,
+  100% {
+    transform: translateY(0);
+  }
+  45%,
+  75% {
+    transform: translateY(3px);
+  }
+}
+
+@keyframes studio-droid-wheel {
+  0%,
+  30% {
+    transform: rotate(0);
+  }
+  75%,
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .studio-droid g,
+  .studio-droid path,
+  .studio-droid rect {
+    animation: none;
+  }
 }
 
 .home-page .home-process {
