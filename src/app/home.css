@@ -345,14 +345,6 @@
   line-height: 1.45;
 }
 
-.home-page .reasons li:first-child {
-  border-color: var(--accent);
-}
-
-.home-page .reasons li:first-child::after {
-  background: linear-gradient(180deg, rgb(198 241 126 / 10%) 8%, rgb(10 11 9 / 55%) 38%, #0a0b09 76%);
-}
-
 .home-page .home-capabilities {
   padding-top: 20px;
 }
@@ -395,10 +387,6 @@
   z-index: -1;
   pointer-events: none;
   background: linear-gradient(180deg, transparent 12%, rgb(10 11 9 / 35%) 36%, #0a0b09 72%);
-}
-
-.home-page .capability-row:first-child::after {
-  background: linear-gradient(180deg, rgb(198 241 126 / 10%) 10%, rgb(10 11 9 / 45%) 40%, #0a0b09 72%);
 }
 
 .home-page .capability-row:hover {
@@ -511,23 +499,45 @@
 }
 
 .home-page .process-preview li {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 0;
-  min-height: 250px;
+  min-height: 300px;
   margin: 0;
   padding: 24px;
   border: 1px solid var(--border);
   border-radius: 24px;
+  background: #121310;
 }
 
-.home-page .process-preview li:nth-child(even) {
-  background: var(--foreground);
-  color: var(--background);
+.home-page .process-background {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center top;
 }
 
-.home-page .process-preview li:nth-child(even) .mono {
-  color: #2a2822;
+.home-page .process-preview li::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgb(10 11 9 / 10%) 8%, rgb(10 11 9 / 55%) 38%, #0a0b09 76%);
+}
+
+.home-page .process-rule .mono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #c6ff3566;
+  border-radius: 50%;
+  background: rgb(10 11 9 / 75%);
+  color: var(--accent);
 }
 
 .home-page .process-rule {
@@ -554,7 +564,7 @@
 .home-page .process-preview p {
   font-size: 14px;
   line-height: 1.5;
-  color: inherit;
+  color: #c9c2ad;
 }
 
 .home-page .industry-links {
@@ -774,7 +784,7 @@
   }
 
   .home-page .process-preview li {
-    min-height: 230px;
+    min-height: 280px;
   }
 
   .home-page .industry-links a {

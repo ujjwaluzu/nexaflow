@@ -246,6 +246,13 @@ export function ProcessPreview() {
         <ol className="process-preview">
           {processSteps.map((step, index) => (
             <li key={step.name}>
+              <Image
+                className="process-background"
+                src={`/art/process/${step.name.toLowerCase()}.webp`}
+                alt=""
+                fill
+                sizes="(max-width: 639px) 100vw, 20vw"
+              />
               <div className="process-rule">
                 <span className="mono">0{index + 1}</span>
                 <Plus size={14} />
