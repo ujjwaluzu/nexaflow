@@ -50,18 +50,6 @@ export function HomeScrollMotion() {
       };
 
       add(
-        '.hero-main-art',
-        section,
-        [
-          { transform: 'translate3d(0, 0, 0) scale(1)' },
-          {
-            transform: `translate3d(0, ${Math.round(window.innerHeight * 1.1)}px, 0) scale(${compact ? 1.65 : 1.8})`,
-          },
-        ],
-        0.95,
-        -0.15,
-      );
-      add(
         '.statement-word:first-child',
         section,
         [
