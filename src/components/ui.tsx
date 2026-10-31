@@ -35,29 +35,10 @@ export function TextLink({ href, children }: { href: string; children: ReactNode
     </Link>
   );
 }
-export function Label({ children, number }: { children: ReactNode; number?: string }) {
-  return (
-    <p className="eyebrow">
-      {number && <span className="section-number">{number}</span>}
-      {children}
-    </p>
-  );
-}
-export function SectionHeading({
-  label,
-  title,
-  children,
-  number,
-}: {
-  label: string;
-  title: string;
-  children?: ReactNode;
-  number?: string;
-}) {
+export function SectionHeading({ title, children }: { title: string; children?: ReactNode }) {
   return (
     <div className="section-heading">
       <div>
-        <Label number={number}>{label}</Label>
         <h2>{title}</h2>
       </div>
       {children && <div className="section-heading-aside">{children}</div>}
@@ -65,19 +46,16 @@ export function SectionHeading({
   );
 }
 export function PageHero({
-  eyebrow,
   title,
   description,
   children,
 }: {
-  eyebrow: string;
   title: string;
   description: string;
   children?: ReactNode;
 }) {
   return (
     <section className="page-hero shell">
-      <Label>{eyebrow}</Label>
       <h1>{title}</h1>
       <div className="page-hero-bottom">
         <p className="lead">{description}</p>
@@ -93,7 +71,6 @@ export function FinalCTA({ editorial = false }: { editorial?: boolean }) {
       id={editorial ? 'end' : undefined}
       data-reveal={editorial || undefined}
     >
-      <Label>Let’s make it happen</Label>
       <div className="final-cta-grid">
         <h2>
           Have something

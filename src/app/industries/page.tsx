@@ -1,5 +1,5 @@
 import { industries } from '@/data/industries';
-import { FinalCTA, Label, PageHero, TextLink } from '@/components/ui';
+import { FinalCTA, PageHero, TextLink } from '@/components/ui';
 import { metadata as makeMetadata } from '@/lib/seo';
 export const metadata = makeMetadata(
   'Solutions for your business',
@@ -10,14 +10,12 @@ export default function IndustriesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Where we can help"
         title="The technology changes. Your business comes first."
         description="Different businesses need different systems. The starting point is always the work: who does it, where it gets stuck, and what a better outcome would look like."
       />
       <section className="shell industry-overview">
         {industries.map((item) => (
           <article key={item.slug}>
-            <Label>Business context</Label>
             <h2 style={{ marginTop: 22 }}>{item.name}</h2>
             <p>{item.intro}</p>
             <TextLink href={`/industries/${item.slug}`}>
@@ -27,7 +25,6 @@ export default function IndustriesPage() {
         ))}
       </section>
       <section className="section shell">
-        <Label>Other sectors we can serve</Label>
         <div className="industry-other" style={{ marginTop: 30 }}>
           {[
             {

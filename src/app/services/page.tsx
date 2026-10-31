@@ -11,7 +11,6 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Our capabilities"
         title="From the first impression to the systems behind it."
         description="A website is often the starting point. The real opportunity is connecting it to the software, workflows and infrastructure that keep your business moving."
       >

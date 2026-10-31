@@ -3,7 +3,6 @@ import Link from 'next/link';
 export default function ErrorPage({ reset }: { reset: () => void }) {
   return (
     <section className="shell confirmation">
-      <p className="eyebrow">A temporary interruption</p>
       <h1>Something didn’t connect.</h1>
       <p className="lead" style={{ marginTop: 25 }}>
         Please try this page again. If you were filling in an enquiry, avoid including sensitive

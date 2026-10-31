@@ -18,7 +18,6 @@ export default async function ContactPage({
   return (
     <>
       <PageHero
-        eyebrow="Start a conversation"
         title="What are you working on?"
         description="A new idea, a system that needs improving, or a process that takes too much time. Tell us where you want to go."
       />
@@ -41,7 +40,6 @@ export default async function ContactPage({
             )}
           </div>
           <div>
-            <p className="eyebrow">What happens next</p>
             <ol>
               <li>
                 <span className="mono">01</span>Your enquiry is securely recorded.

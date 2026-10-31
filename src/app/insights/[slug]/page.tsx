@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { articles } from '@/lib/content';
-import { Breadcrumbs, FinalCTA, JsonLd, Label } from '@/components/ui';
+import { Breadcrumbs, FinalCTA, JsonLd } from '@/components/ui';
 import { metadata as makeMetadata } from '@/lib/seo';
 import { brand } from '@/config/brand';
 import { site } from '@/config/site';
@@ -38,7 +38,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         ]}
       />
       <header className="page-hero shell">
-        <Label>{article.category}</Label>
         <h1>{article.title}</h1>
         <p className="lead" style={{ maxWidth: 760, marginTop: 30 }}>
           {article.description}

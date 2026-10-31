@@ -1,29 +1,18 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect } from 'react';
 import { SpinningGlobe } from './spinning-globe';
 
 export function HomeHeroArt() {
   return (
     <div className="home-hero-art">
-      <Image
-        className="hero-strip hero-glitch"
-        src="/art/glitch-halftone-transparent.webp"
-        width={686}
-        height={919}
-        alt="Black-and-cream halftone sticker of a person at a desk dissolving into streaming screens"
-        sizes="9.64vw"
-      />
+      <span className="hero-side-word hero-side-built" aria-hidden="true">
+        Built
+      </span>
       <SpinningGlobe />
-      <Image
-        className="hero-strip hero-laptop"
-        src="/art/laptop-transparent.webp"
-        width={820}
-        height={822}
-        alt="Halftone hands typing on a laptop"
-        sizes="15vw"
-      />
+      <span className="hero-side-word hero-side-around" aria-hidden="true">
+        Around
+      </span>
     </div>
   );
 }

@@ -26,7 +26,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         ]}
       />
       <PageHero
-        eyebrow={project.category}
         title={project.title}
         description={project.description}
       />
@@ -82,7 +81,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </div>
         <section className="split-content content-section">
           <div>
-            <p className="eyebrow">From the actual build</p>
             <h2 style={{ marginTop: 20 }}>Designed for the smaller screen, too.</h2>
             <p style={{ marginTop: 25 }}>
               This image is a capture of the mobile interface, not a fabricated product mockup.

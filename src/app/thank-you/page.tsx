@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { Button, Label } from '@/components/ui';
+import { Button } from '@/components/ui';
 export const metadata = { title: 'Enquiry confirmation', robots: { index: false, follow: false } };
 export default async function ThankYouPage({
   searchParams,
@@ -11,13 +11,6 @@ export default async function ThankYouPage({
   const local = query.mode === 'local';
   return (
     <section className="shell confirmation">
-      <Label>
-        {reference.success
-          ? local
-            ? 'Local test complete'
-            : 'Enquiry accepted'
-          : 'Let’s start a conversation'}
-      </Label>
       <h1>
         {reference.success ? (
           <>

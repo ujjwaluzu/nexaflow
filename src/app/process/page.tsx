@@ -1,5 +1,5 @@
 import { processSteps } from '@/data/process';
-import { Button, FinalCTA, Label, PageHero } from '@/components/ui';
+import { Button, FinalCTA, PageHero } from '@/components/ui';
 import { metadata as makeMetadata } from '@/lib/seo';
 export const metadata = makeMetadata(
   'How we work',
@@ -10,7 +10,6 @@ export default function ProcessPage() {
   return (
     <>
       <PageHero
-        eyebrow="How we work"
         title="Clarity at every step. Working software at the end."
         description="A useful process makes decisions easier. We work in reviewable stages, keep scope visible and define what a successful handover looks like before the build begins."
       >
@@ -36,7 +35,6 @@ export default function ProcessPage() {
               </p>
             </div>
             <div className="process-output">
-              <Label>What you leave with</Label>
               <p>{step.output}</p>
             </div>
           </article>
@@ -44,7 +42,6 @@ export default function ProcessPage() {
       </section>
       <section className="content-section shell split-content">
         <div>
-          <Label>A working relationship</Label>
           <h2>Good delivery is a shared responsibility.</h2>
         </div>
         <div className="body-copy">

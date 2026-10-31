@@ -8,7 +8,6 @@ import {
   FAQ,
   FinalCTA,
   JsonLd,
-  Label,
   PageHero,
   SectionHeading,
   ServiceIcon,
@@ -40,7 +39,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         ]}
       />
       <PageHero
-        eyebrow={`${service.number} / ${service.name}`}
         title={service.headline}
         description={service.intro}
       >
@@ -72,7 +70,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </div>
       <section className="content-section shell split-content">
         <div>
-          <Label>The problem & the possibility</Label>
           <h2>Better technology starts with a better question.</h2>
         </div>
         <div className="body-copy">
@@ -84,7 +81,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
       <section className="section shell">
-        <SectionHeading label="What we deliver" title="A practical scope. A useful outcome." />
+        <SectionHeading title="A practical scope. A useful outcome." />
         <div className="deliverables">
           {service.deliverables.map((item, i) => (
             <article key={item.title} className="deliverable">
@@ -98,7 +95,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <section className="section section-surface">
         <div className="shell split-content">
           <div>
-            <Label>In practice</Label>
             <h2>
               Real work.
               <br />
@@ -117,7 +113,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
       <section className="section shell split-content">
         <div>
-          <Label>The technical foundation</Label>
           <h2>
             The right tools.
             <br />
@@ -137,7 +132,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
       <section className="content-section shell">
-        <SectionHeading label="The engagement" title="Built together. Reviewed as we go.">
+        <SectionHeading title="Built together. Reviewed as we go.">
           <TextLink href="/process">See our full process</TextLink>
         </SectionHeading>
         <p className="lead" style={{ maxWidth: 850, marginBottom: 45 }}>
@@ -157,7 +152,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
       <section className="content-section shell split-content">
         <div>
-          <Label>Related studio work</Label>
           <h2>A view into the approach.</h2>
         </div>
         <div className="body-copy">
@@ -174,7 +168,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
       <section className="section shell">
-        <SectionHeading label="Frequently asked" title="A few useful answers." />
+        <SectionHeading title="A few useful answers." />
         <FAQ items={service.faqs} />
       </section>
       <FinalCTA />

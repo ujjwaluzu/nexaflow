@@ -11,7 +11,6 @@ export default function TermsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Website information / Updated 30 October 2026"
         title="A clear starting point."
         description="These terms concern the use of this website. Any paid project will have its own written agreement, scope and commercial terms."
       />

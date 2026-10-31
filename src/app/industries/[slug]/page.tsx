@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { industries } from '@/data/industries';
-import { Breadcrumbs, Button, FinalCTA, Label, PageHero, SectionHeading } from '@/components/ui';
+import { Breadcrumbs, Button, FinalCTA, PageHero, SectionHeading } from '@/components/ui';
 import { metadata as makeMetadata } from '@/lib/seo';
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -30,7 +30,6 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         ]}
       />
       <PageHero
-        eyebrow={`Built for ${item.name.toLowerCase()}`}
         title={item.headline}
         description={item.intro}
       >
@@ -38,7 +37,6 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
       </PageHero>
       <section className="content-section shell split-content">
         <div>
-          <Label>Start with the work</Label>
           <h2>A useful problem deserves a considered solution.</h2>
         </div>
         <div className="body-copy">
@@ -47,7 +45,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
       <section className="section shell">
-        <SectionHeading label="Where we can help" title="Practical ways to move forward." />
+        <SectionHeading title="Practical ways to move forward." />
         <div className="deliverables">
           {item.uses.map((use, index) => (
             <article className="deliverable" key={use.title}>
@@ -60,7 +58,6 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
       </section>
       <section className="content-section shell split-content">
         <div>
-          <Label>Your first step</Label>
           <h2>
             Bring the context.
             <br />

@@ -4,15 +4,11 @@ import { ArrowUpRight, Check, Plus } from 'lucide-react';
 import { services } from '@/data/services';
 import { processSteps } from '@/data/process';
 import { brand } from '@/config/brand';
-import { Button, Label, SectionHeading, ServiceIcon, TextLink, EmptyProjectNote } from './ui';
+import { Button, SectionHeading, ServiceIcon, TextLink, EmptyProjectNote } from './ui';
 export function Capabilities() {
   return (
     <section className="section shell home-capabilities" id="capabilities" data-reveal>
-      <SectionHeading
-        label="Our capabilities"
-        number="01"
-        title="Everything your business needs to operate digitally."
-      >
+      <SectionHeading title="Everything your business needs to operate digitally.">
         <p>
           Four connected disciplines.
           <br />
@@ -45,12 +41,10 @@ export function SelectedWork({
   if (editorial) {
     return (
       <section className="section shell home-work" id="work" data-reveal>
-        <Label number="02">Selected work</Label>
         <div className="home-work-grid">
           <div>
             <h2>Built with purpose. Engineered to perform.</h2>
             <div className="home-project-info">
-              <Label>Independent project · Web engineering</Label>
               <h3>
                 <Link href="/work/studio-website">{brand.name} / The studio website</Link>
               </h3>
@@ -85,11 +79,7 @@ export function SelectedWork({
   return (
     <section className={`section shell ${full ? 'work-section-full' : ''}`}>
       {!full && (
-        <SectionHeading
-          label="Selected work"
-          number="02"
-          title="Built with purpose. Engineered to perform."
-        >
+        <SectionHeading title="Built with purpose. Engineered to perform.">
           <TextLink href="/work">Explore our work</TextLink>
         </SectionHeading>
       )}
@@ -120,7 +110,6 @@ export function SelectedWork({
         </Link>
         <div className="project-info">
           <div>
-            <Label>Independent project · Web engineering</Label>
             <h3>
               <Link href="/work/studio-website">{brand.name} / The studio website</Link>
             </h3>
@@ -150,7 +139,6 @@ export function WhyStudio() {
   return (
     <section className="section home-statement" id="about" data-reveal>
       <div className="shell">
-        <Label>The studio advantage</Label>
         <div className="home-statement-grid">
           <span className="statement-word" aria-hidden="true">
             We
@@ -200,11 +188,7 @@ export function ProcessPreview() {
   return (
     <section className="section home-process" id="path" data-reveal>
       <div className="shell">
-        <SectionHeading
-          label="How we work"
-          number="03"
-          title="A clear path from idea to production."
-        >
+        <SectionHeading title="A clear path from idea to production.">
           <TextLink href="/process">Inside the process</TextLink>
         </SectionHeading>
         <ol className="process-preview">
@@ -238,11 +222,7 @@ export function IndustriesPreview() {
   ];
   return (
     <section className="section shell industries-preview" data-reveal>
-      <SectionHeading
-        label="Where we can help"
-        number="04"
-        title="Different businesses. Real-world challenges."
-      >
+      <SectionHeading title="Different businesses. Real-world challenges.">
         <p>
           Technology shaped to the work.
           <br />

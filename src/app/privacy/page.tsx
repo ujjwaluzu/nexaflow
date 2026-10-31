@@ -11,7 +11,6 @@ export default function PrivacyPage() {
   return (
     <>
       <PageHero
-        eyebrow="Website information / Updated 30 October 2026"
         title="Privacy, in plain language."
         description="This notice describes the information collected by this website, why it is used, and the choices available to you."
       />

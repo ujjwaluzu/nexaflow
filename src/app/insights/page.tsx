@@ -12,7 +12,6 @@ export default function InsightsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Notes from the studio"
         title="Clear thinking, before the code."
         description="Practical notes on building software, connecting workflows and making technology decisions that hold up in real use."
       />
@@ -26,7 +25,6 @@ export default function InsightsPage() {
                 {article.readingTime}
               </div>
               <div>
-                <span className="eyebrow">{article.category}</span>
                 <h2>{article.title}</h2>
                 <p>{article.description}</p>
               </div>

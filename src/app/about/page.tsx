@@ -1,5 +1,5 @@
 import { brand } from '@/config/brand';
-import { Button, FinalCTA, Label, PageHero } from '@/components/ui';
+import { Button, FinalCTA, PageHero } from '@/components/ui';
 import { metadata as makeMetadata } from '@/lib/seo';
 export const metadata = makeMetadata(
   'An independent engineering studio',
@@ -10,14 +10,12 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="Independent by design"
         title="A small studio. A connected way of thinking."
         description={`${brand.name} is a founder-led digital engineering and automation studio for businesses in India and international markets. Design, code and operational thinking belong in the same conversation.`}
       >
         <Button href="/contact">Meet your next project</Button>
       </PageHero>
       <section className="content-section shell">
-        <Label>The belief behind the studio</Label>
         <p className="manifesto" style={{ marginTop: 30 }}>
           Good technology should make a business easier to run.{' '}
           <span className="muted">
@@ -28,7 +26,6 @@ export default function AboutPage() {
       </section>
       <section className="section shell split-content">
         <div>
-          <Label>The founder-led model</Label>
           <h2>
             Direct by nature.
             <br />
@@ -53,7 +50,6 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="content-section shell">
-        <Label>Principles we work by</Label>
         <ol className="values-list" style={{ marginTop: 35 }}>
           {[
             {
