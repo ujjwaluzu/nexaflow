@@ -148,22 +148,27 @@ export function WhyStudio() {
   const reasons = [
     {
       title: 'Business first',
+      image: 'business-first',
       text: 'Scope shaped around your goals, users and constraints.',
     },
     {
       title: 'Direct by design',
+      image: 'direct-by-design',
       text: 'Talk with the engineer making the decisions and building your system.',
     },
     {
       title: 'One connected system',
+      image: 'one-connected-system',
       text: 'Web, software and automation planned to work together.',
     },
     {
       title: 'Made to be maintained',
+      image: 'made-to-be-maintained',
       text: 'Readable code, useful documentation and a clear handover.',
     },
     {
       title: 'Built for what comes next',
+      image: 'built-for-what-comes-next',
       text: 'A solid foundation and a lasting engineering partnership.',
     },
   ];
@@ -208,6 +213,13 @@ export function WhyStudio() {
         <ul className="reasons">
           {reasons.map((reason, index) => (
             <li key={reason.title}>
+              <Image
+                className="reason-background"
+                src={`/art/reasons/${reason.image}.webp`}
+                alt=""
+                fill
+                sizes="(max-width: 639px) 100vw, (max-width: 1100px) 33vw, 20vw"
+              />
               <span className="reason-index mono">0{index + 1}</span>
               <h3>{reason.title}</h3>
               <p>{reason.text}</p>
