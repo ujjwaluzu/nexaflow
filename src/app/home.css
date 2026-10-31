@@ -351,6 +351,9 @@
 }
 
 .home-page .capability-row {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -361,26 +364,48 @@
   padding: 90px 28px 30px;
   border: 1px solid #4a463c;
   border-radius: 240px 240px 26px 26px;
+  background: #121310;
   transition: border-color 0.2s ease;
 }
 
-.home-page .capability-row:first-child {
-  background: var(--accent);
-  color: #0a0a0a;
+.home-page .capability-background {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s ease;
+}
+
+.home-page .capability-row::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 12%, rgb(10 11 9 / 35%) 36%, #0a0b09 72%);
+}
+
+.home-page .capability-row:first-child::after {
+  background: linear-gradient(180deg, rgb(198 241 126 / 10%) 10%, rgb(10 11 9 / 45%) 40%, #0a0b09 72%);
 }
 
 .home-page .capability-row:hover {
   border-color: var(--accent);
-  background: transparent;
+  background: #121310;
   padding: 90px 28px 30px;
 }
 
-.home-page .capability-row:first-child:hover {
-  background: #d4ff72;
+.home-page .capability-row:hover .capability-background {
+  transform: scale(1.04);
 }
 
-.home-page .capability-row:first-child :is(p, .mono) {
-  color: #2a2822;
+.home-page .capability-row .capability-number {
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .capability-background {
+    transition: none;
+  }
 }
 
 .home-page .capability-symbol {

@@ -8,7 +8,13 @@ import { Button, SectionHeading, ServiceIcon, TextLink, EmptyProjectNote } from 
 export function Capabilities() {
   return (
     <section className="section shell home-capabilities" id="capabilities" data-reveal>
-      <SectionHeading title="Everything your business needs to operate digitally.">
+      <SectionHeading
+        title={
+          <>
+            Everything your <span className="accent">business</span> needs to operate digitally.
+          </>
+        }
+      >
         <p>
           Four connected disciplines.
           <br />
@@ -18,13 +24,19 @@ export function Capabilities() {
       <div className="capability-list">
         {services.map((service, index) => (
           <Link className="capability-row" href={`/services/${service.slug}`} key={service.slug}>
+            <Image
+              className="capability-background"
+              src={`/art/services/${service.slug}.webp`}
+              alt=""
+              fill
+              sizes="(max-width: 639px) 100vw, (max-width: 1100px) 50vw, 25vw"
+            />
             <span className="mono capability-number">{service.number}</span>
             <div className="capability-symbol">
               <ServiceIcon index={index} />
             </div>
             <h3>{service.name}</h3>
             <p>{service.short}</p>
-            <ArrowUpRight size={24} className="row-arrow" />
           </Link>
         ))}
       </div>
@@ -43,7 +55,11 @@ export function SelectedWork({
       <section className="section shell home-work" id="work" data-reveal>
         <div className="home-work-grid">
           <div>
-            <h2>Built with purpose. Engineered to perform.</h2>
+            <h2>
+              Built with purpose.
+              <br />
+              Engineered to <span className="accent">perform.</span>
+            </h2>
             <div className="home-project-info">
               <h3>
                 <Link href="/work/studio-website">{brand.name} / The studio website</Link>
@@ -171,7 +187,9 @@ export function WhyStudio() {
             <h2>
               One engineering partner.
               <br />
-              <span className="muted">Connected solutions.</span>
+              <span>
+                <span className="accent">Connected</span> solutions.
+              </span>
             </h2>
             <p className="lead">
               Your website, software and operations shouldn’t feel like separate conversations.
@@ -204,7 +222,13 @@ export function ProcessPreview() {
   return (
     <section className="section home-process" id="path" data-reveal>
       <div className="shell">
-        <SectionHeading title="A clear path from idea to production.">
+        <SectionHeading
+          title={
+            <>
+              A clear path from idea to <span className="accent">production.</span>
+            </>
+          }
+        >
           <TextLink href="/process">Inside the process</TextLink>
         </SectionHeading>
         <ol className="process-preview">
@@ -238,7 +262,15 @@ export function IndustriesPreview() {
   ];
   return (
     <section className="section shell industries-preview" data-reveal>
-      <SectionHeading title="Different businesses. Real-world challenges.">
+      <SectionHeading
+        title={
+          <>
+            Different businesses.
+            <br />
+            Real-world <span className="accent">challenges.</span>
+          </>
+        }
+      >
         <p>
           Technology shaped to the work.
           <br />

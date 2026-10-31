@@ -34,7 +34,7 @@ export function TextLink({ href, children }: { href: string; children: ReactNode
     </Link>
   );
 }
-export function SectionHeading({ title, children }: { title: string; children?: ReactNode }) {
+export function SectionHeading({ title, children }: { title: ReactNode; children?: ReactNode }) {
   return (
     <div className="section-heading">
       <div>
@@ -74,7 +74,7 @@ export function FinalCTA({ editorial = false }: { editorial?: boolean }) {
         <h2>
           Have something
           <br />
-          worth building<span className="accent">?</span>
+          worth <span className="accent">building</span><span className="accent">?</span>
         </h2>
         <div>
           <p>

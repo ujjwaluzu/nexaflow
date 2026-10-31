@@ -14,6 +14,8 @@ import { brand } from '@/config/brand';
 import './home.css';
 export const metadata = makeMetadata(brand.heroHeadline.join(' '), brand.description, '/');
 export default function Home() {
+  const heroWords = brand.heroHeadline[1].replace(/\.$/, '').split(' ');
+
   return (
     <div className="home-page">
       <HomeScrollMotion />
@@ -40,7 +42,8 @@ export default function Home() {
               />
             </span>
             <span aria-hidden="true">
-              {brand.heroHeadline[1].replace(/\.$/, '')}
+              {heroWords.slice(0, -1).join(' ')}{' '}
+              <span className="accent">{heroWords.at(-1)}</span>
               <span className="accent">.</span>
             </span>
           </h1>
