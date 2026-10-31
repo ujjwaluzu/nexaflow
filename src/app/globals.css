@@ -756,16 +756,6 @@ ol {
   font-size: 14px;
   margin-bottom: 25px;
 }
-.cta-foot {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 80px;
-  padding-top: 25px;
-  border-top: 1px solid var(--border);
-  font-family: var(--font-mono);
-  font-size: 9px;
-  color: var(--muted);
-}
 .site-footer {
   border-top: 1px solid var(--border);
   margin-top: 45px;
@@ -2243,10 +2233,6 @@ a:hover {
   }
   .final-cta p:not(.eyebrow) {
     font-size: 14px;
-  }
-  .cta-foot {
-    margin-top: 50px;
-    font-size: 7px;
   }
   .site-footer {
     margin-top: 25px;

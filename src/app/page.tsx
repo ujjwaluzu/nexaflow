@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { HomeHeroArt, RevealOnScroll } from '@/components/home-art';
+import { HomeHeroArt } from '@/components/home-art';
+import { HomeScrollMotion } from '@/components/home-scroll-motion';
 import { Button, FinalCTA } from '@/components/ui';
 import {
   Capabilities,
@@ -15,7 +16,7 @@ export const metadata = makeMetadata(brand.heroHeadline.join(' '), brand.descrip
 export default function Home() {
   return (
     <div className="home-page">
-      <RevealOnScroll />
+      <HomeScrollMotion />
       <section className="home-hero">
         <div className="shell hero-copy">
           <HomeHeroArt />

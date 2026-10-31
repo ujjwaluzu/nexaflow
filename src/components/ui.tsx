@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import {
-  ArrowDown,
   ArrowRight,
   ArrowUpRight,
   Braces,
@@ -84,10 +83,6 @@ export function FinalCTA({ editorial = false }: { editorial?: boolean }) {
           </p>
           <Button href="/contact">Start a project</Button>
         </div>
-      </div>
-      <div className="cta-foot">
-        <span>Good systems start with a conversation.</span>
-        <ArrowDown size={16} />
       </div>
     </section>
   );
