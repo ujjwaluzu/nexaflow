@@ -180,6 +180,17 @@ ol {
 .page-hero h1 {
   animation: studio-enter 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
 }
+.is-scroll-reveal-pending {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity 560ms cubic-bezier(0.2, 0.7, 0.3, 1),
+    transform 560ms cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.is-scroll-reveal-pending.is-scroll-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
 .eyebrow {
   display: flex;
   align-items: center;

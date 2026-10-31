@@ -5,6 +5,7 @@ import { site } from '@/config/site';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { PrivacyControls } from '@/components/privacy-controls';
+import { SiteScrollReveal } from '@/components/site-scroll-reveal';
 import { JsonLd } from '@/components/ui';
 import { organizationSchema } from '@/lib/seo';
 import './globals.css';
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <Navigation />
+        <SiteScrollReveal />
         <main id="main-content">{children}</main>
         <Footer />
         <PrivacyControls />
