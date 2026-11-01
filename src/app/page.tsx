@@ -22,7 +22,10 @@ export default function Home() {
       <section className="home-hero">
         <div className="shell hero-copy">
           <HomeHeroArt />
-          <h1 aria-label={brand.heroHeadline.join(' ')}>
+          <h1 aria-label={`Enhance around ${brand.heroHeadline[1]}`}>
+            <span className="hero-compact-heading" aria-hidden="true">
+              Enhance around
+            </span>
             <span className="hero-word-art" aria-hidden="true">
               <Image
                 className="hero-word-image hero-word-glitch"
@@ -42,8 +45,7 @@ export default function Home() {
               />
             </span>
             <span aria-hidden="true">
-              {heroWords.slice(0, -1).join(' ')}{' '}
-              <span className="accent">{heroWords.at(-1)}</span>
+              {heroWords.slice(0, -1).join(' ')} <span className="accent">{heroWords.at(-1)}</span>
               <span className="accent">.</span>
             </span>
           </h1>
