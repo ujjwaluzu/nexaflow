@@ -90,29 +90,6 @@
     margin-top: 2px;
   }
 
-  .breadcrumbs {
-    padding-top: 24px;
-  }
-
-  .breadcrumbs ol {
-    gap: 8px 12px;
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  .breadcrumbs li {
-    display: inline;
-  }
-
-  .breadcrumbs li > span[aria-hidden] {
-    margin-left: 12px;
-  }
-
-  .breadcrumbs a {
-    display: inline-block;
-    padding-block: 4px;
-  }
-
   .breadcrumbs + .page-hero {
     padding-top: 24px;
   }

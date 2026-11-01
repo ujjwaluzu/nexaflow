@@ -1030,26 +1030,50 @@ ol {
   font-size: 19px;
 }
 .breadcrumbs {
-  padding-top: 30px;
+  padding-top: 24px;
 }
 .breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  align-items: flex-start;
+  gap: 4px 10px;
   list-style: none;
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
   color: var(--muted);
 }
 .breadcrumbs li {
   display: flex;
-  gap: 14px;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  max-width: 100%;
 }
-.breadcrumbs li span[aria-current] {
+.breadcrumbs a,
+.breadcrumbs [aria-current='page'] {
+  display: block;
+  min-height: 32px;
+  padding-block: 6px;
+}
+.breadcrumbs a {
+  white-space: nowrap;
+  border-radius: 4px;
+}
+.breadcrumbs a:hover {
+  color: var(--accent);
+}
+.breadcrumbs [aria-current='page'] {
   color: var(--foreground);
+  font-weight: 600;
+}
+.breadcrumb-separator {
+  flex: 0 0 14px;
+  margin-top: 9px;
+  color: var(--border);
 }
 .breadcrumbs + .page-hero {
-  padding-top: 55px;
+  padding-top: 24px;
 }
 .content-section {
   padding-block: 80px;
@@ -2395,19 +2419,6 @@ a:hover {
     align-items: flex-start;
     gap: 25px;
     margin-top: 25px;
-  }
-  .breadcrumbs {
-    padding-top: 22px;
-  }
-  .breadcrumbs ol {
-    font-size: 8px;
-    gap: 9px;
-  }
-  .breadcrumbs li {
-    gap: 9px;
-  }
-  .breadcrumbs + .page-hero {
-    padding-top: 38px;
   }
   .content-section {
     padding-block: 55px;

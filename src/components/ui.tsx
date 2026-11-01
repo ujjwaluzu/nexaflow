@@ -3,6 +3,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   Braces,
+  ChevronRight,
   Layers3,
   Network,
   Workflow,
@@ -74,7 +75,8 @@ export function FinalCTA({ editorial = false }: { editorial?: boolean }) {
         <h2>
           Have something
           <br />
-          worth <span className="accent">building</span><span className="accent">?</span>
+          worth <span className="accent">building</span>
+          <span className="accent">?</span>
         </h2>
         <div>
           <p>
@@ -91,20 +93,6 @@ export function Breadcrumbs({ items }: { items: { label: string; href: string }[
   const list = [{ label: 'Home', href: '/' }, ...items];
   return (
     <>
-      <nav className="breadcrumbs shell" aria-label="Breadcrumb">
-        <ol>
-          {list.map((item, i) => (
-            <li key={item.href}>
-              {i === list.length - 1 ? (
-                <span aria-current="page">{item.label}</span>
-              ) : (
-                <Link href={item.href}>{item.label}</Link>
-              )}
-              {i < list.length - 1 && <span aria-hidden="true">/</span>}
-            </li>
-          ))}
-        </ol>
-      </nav>
       <JsonLd
         data={{
           '@context': 'https://schema.org',
@@ -117,6 +105,22 @@ export function Breadcrumbs({ items }: { items: { label: string; href: string }[
           })),
         }}
       />
+      <nav className="breadcrumbs shell" aria-label="Breadcrumb">
+        <ol>
+          {list.map((item, i) => (
+            <li key={item.href}>
+              {i > 0 && (
+                <ChevronRight className="breadcrumb-separator" size={14} aria-hidden="true" />
+              )}
+              {i === list.length - 1 ? (
+                <span aria-current="page">{item.label}</span>
+              ) : (
+                <Link href={item.href}>{item.label}</Link>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
     </>
   );
 }
