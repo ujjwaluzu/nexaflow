@@ -240,7 +240,7 @@ export function EnquiryForm({
             </div>
           </div>
           {message('budget')}
-          <p className="small muted" style={{ marginTop: 8, fontSize: 11 }}>
+          <p className="field-hint">
             A planning range, not a quote. Choose another currency or “Not sure” if that fits
             better.
           </p>

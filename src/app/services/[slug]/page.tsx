@@ -16,6 +16,7 @@ import {
 import { metadata as makeMetadata } from '@/lib/seo';
 import { brand } from '@/config/brand';
 import { site } from '@/config/site';
+import { SectionLinks } from '@/components/reading-navigation';
 export const dynamicParams = false;
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -38,14 +39,20 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           { label: service.name, href: `/services/${slug}` },
         ]}
       />
-      <PageHero
-        title={service.headline}
-        description={service.intro}
-      >
+      <PageHero title={service.headline} description={service.intro}>
         <Button href={`/contact?service=${encodeURIComponent(service.name)}`}>
           Discuss your project
         </Button>
       </PageHero>
+      <SectionLinks
+        items={[
+          { id: 'overview', label: 'Overview' },
+          { id: 'deliverables', label: 'What we deliver' },
+          { id: 'applications', label: 'Applications' },
+          { id: 'delivery', label: 'How we work' },
+          { id: 'questions', label: 'FAQs' },
+        ]}
+      />
       <div className="shell">
         <div className="service-art" aria-hidden="true">
           <span className="service-art-label">
@@ -68,7 +75,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </span>
         </div>
       </div>
-      <section className="content-section shell split-content">
+      <section className="content-section shell split-content" id="overview">
         <div>
           <h2>Better technology starts with a better question.</h2>
         </div>
@@ -80,7 +87,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </p>
         </div>
       </section>
-      <section className="section shell">
+      <section className="section shell" id="deliverables">
         <SectionHeading title="A practical scope. A useful outcome." />
         <div className="deliverables">
           {service.deliverables.map((item, i) => (
@@ -92,7 +99,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           ))}
         </div>
       </section>
-      <section className="section section-surface">
+      <section className="section section-surface" id="applications">
         <div className="shell split-content">
           <div>
             <h2>
@@ -131,13 +138,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           ))}
         </div>
       </section>
-      <section className="content-section shell">
+      <section className="content-section shell" id="delivery">
         <SectionHeading title="Built together. Reviewed as we go.">
           <TextLink href="/process">See our full process</TextLink>
         </SectionHeading>
-        <p className="lead" style={{ maxWidth: 850, marginBottom: 45 }}>
-          {service.engagement}
-        </p>
+        <p className="lead section-intro">{service.engagement}</p>
         <ol className="process-preview">
           {processSteps.map((step, i) => (
             <li key={step.name}>
@@ -167,7 +172,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <TextLink href="/work/studio-website">Read the studio website case study</TextLink>
         </div>
       </section>
-      <section className="section shell">
+      <section className="section shell" id="questions">
         <SectionHeading title="A few useful answers." />
         <FAQ items={service.faqs} />
       </section>

@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import { projects } from '@/lib/content';
 import { Breadcrumbs, Button, FinalCTA, PageHero } from '@/components/ui';
 import { metadata as makeMetadata } from '@/lib/seo';
+import { ReadingContents } from '@/components/reading-navigation';
+import { readingOutlines } from '@/data/reading';
 export const dynamicParams = false;
 export function generateStaticParams() {
   return projects.map((item) => ({ slug: item.slug }));
@@ -25,10 +27,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           { label: project.title, href: `/work/${slug}` },
         ]}
       />
-      <PageHero
-        title={project.title}
-        description={project.description}
-      />
+      <PageHero title={project.title} description={project.description} />
       <div className="shell">
         <Image
           className="case-cover"
@@ -74,15 +73,16 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 </dd>
               </div>
             </dl>
+            <ReadingContents headings={readingOutlines[slug] ?? []} />
           </aside>
           <article className="prose">
             <Content />
           </article>
         </div>
         <section className="split-content content-section">
-          <div>
-            <h2 style={{ marginTop: 20 }}>Designed for the smaller screen, too.</h2>
-            <p style={{ marginTop: 25 }}>
+          <div className="body-copy">
+            <h2>Designed for the smaller screen, too.</h2>
+            <p className="section-description">
               This image is a capture of the mobile interface, not a fabricated product mockup.
             </p>
           </div>

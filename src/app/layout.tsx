@@ -9,6 +9,7 @@ import { SiteScrollReveal } from '@/components/site-scroll-reveal';
 import { JsonLd } from '@/components/ui';
 import { organizationSchema } from '@/lib/seo';
 import './globals.css';
+import './inner-pages.css';
 const geist = localFont({
   src: '../../node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2',
   variable: '--font-heading',

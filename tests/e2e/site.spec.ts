@@ -48,7 +48,15 @@ test('navigation and project links work', async ({ page, isMobile }) => {
     name: isMobile ? 'Mobile navigation' : 'Main navigation',
     exact: true,
   });
-  await nav.getByRole('link', { name: 'Services', exact: true }).click();
+  if (isMobile) {
+    await nav.getByRole('link', { name: 'Services', exact: true }).click();
+  } else {
+    await nav.getByRole('button', { name: 'Services', exact: true }).click();
+    await page
+      .getByRole('region', { name: 'Services navigation', exact: true })
+      .getByRole('link', { name: 'Explore Services', exact: true })
+      .click();
+  }
   await expect(page).toHaveURL(/\/services$/);
   await page.getByRole('link', { name: 'Explore web engineering', exact: true }).click();
   await expect(page.locator('h1')).toContainText('Your website');

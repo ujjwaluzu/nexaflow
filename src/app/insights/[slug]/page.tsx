@@ -4,6 +4,8 @@ import { Breadcrumbs, FinalCTA, JsonLd } from '@/components/ui';
 import { metadata as makeMetadata } from '@/lib/seo';
 import { brand } from '@/config/brand';
 import { site } from '@/config/site';
+import { ReadingContents } from '@/components/reading-navigation';
+import { readingOutlines } from '@/data/reading';
 export const dynamicParams = false;
 export function generateStaticParams() {
   return articles.map((item) => ({ slug: item.slug }));
@@ -39,9 +41,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       />
       <header className="page-hero shell">
         <h1>{article.title}</h1>
-        <p className="lead" style={{ maxWidth: 760, marginTop: 30 }}>
-          {article.description}
-        </p>
+        <p className="lead article-hero-description">{article.description}</p>
         <div className="article-meta">
           <span>{brand.name} / Studio notes</span>
           <time dateTime={article.date}>30 October 2026</time>
@@ -61,6 +61,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 <dd>{article.category}</dd>
               </div>
             </dl>
+            <ReadingContents headings={readingOutlines[slug] ?? []} />
           </aside>
           <div className="prose">
             <Content />

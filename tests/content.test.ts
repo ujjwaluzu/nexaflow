@@ -3,6 +3,8 @@ import { readFileSync } from 'node:fs';
 import { articles, projects } from '@/lib/content';
 import { services } from '@/data/services';
 import { metadata } from '@/lib/seo';
+import { readingOutlines } from '@/data/reading';
+import { sectionId } from '@/lib/reading';
 describe('content and SEO contracts', () => {
   it('has four complete, distinct service divisions', () => {
     expect(services).toHaveLength(4);
@@ -29,6 +31,19 @@ describe('content and SEO contracts', () => {
     expect(projects[0].category).toBe('Independent studio project');
     expect(projects[0].externalUrl).toBeUndefined();
     expect(projects[0].outcomes.every((value) => !/%|revenue|customers/.test(value))).toBe(true);
+  });
+  it('keeps reading contents complete and heading anchors unique', () => {
+    for (const [items, directory] of [
+      [articles, 'insights'],
+      [projects, 'case-studies'],
+    ] as const) {
+      for (const item of items) {
+        const source = readFileSync(`content/${directory}/${item.slug}.mdx`, 'utf8');
+        const headings = [...source.matchAll(/^## (.+)$/gm)].map((match) => match[1].trim());
+        expect(readingOutlines[item.slug], item.slug).toEqual(headings);
+        expect(new Set(headings.map(sectionId)).size, item.slug).toBe(headings.length);
+      }
+    }
   });
   it('generates canonical, Open Graph and Twitter metadata', () => {
     const result = metadata('A clear title', 'A unique page description', '/services');

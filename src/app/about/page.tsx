@@ -16,7 +16,7 @@ export default function AboutPage() {
         <Button href="/contact">Meet your next project</Button>
       </PageHero>
       <section className="content-section shell">
-        <p className="manifesto" style={{ marginTop: 30 }}>
+        <p className="manifesto">
           Good technology should make a business easier to run.{' '}
           <span className="muted">
             It should be clear to use, dependable in production and understandable to the person who
@@ -50,7 +50,8 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="content-section shell">
-        <ol className="values-list" style={{ marginTop: 35 }}>
+        <h2 className="section-intro">Principles we build by.</h2>
+        <ol className="values-list">
           {[
             {
               title: 'Understand before building.',

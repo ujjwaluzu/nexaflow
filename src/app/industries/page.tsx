@@ -16,7 +16,7 @@ export default function IndustriesPage() {
       <section className="shell industry-overview">
         {industries.map((item) => (
           <article key={item.slug}>
-            <h2 style={{ marginTop: 22 }}>{item.name}</h2>
+            <h2>{item.name}</h2>
             <p>{item.intro}</p>
             <TextLink href={`/industries/${item.slug}`}>
               Explore solutions for {item.name.toLowerCase()}
@@ -25,7 +25,8 @@ export default function IndustriesPage() {
         ))}
       </section>
       <section className="section shell">
-        <div className="industry-other" style={{ marginTop: 30 }}>
+        <h2 className="section-intro">Other businesses we can support.</h2>
+        <div className="industry-other">
           {[
             {
               name: 'Professional services',

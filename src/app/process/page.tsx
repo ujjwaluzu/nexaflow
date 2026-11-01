@@ -1,6 +1,8 @@
 import { processSteps } from '@/data/process';
 import { Button, FinalCTA, PageHero } from '@/components/ui';
 import { metadata as makeMetadata } from '@/lib/seo';
+import { SectionLinks } from '@/components/reading-navigation';
+import { sectionId } from '@/lib/reading';
 export const metadata = makeMetadata(
   'How we work',
   'Discover, define, engineer, launch and support. A practical delivery process with clear artifacts, regular reviews and explicit ownership.',
@@ -15,14 +17,17 @@ export default function ProcessPage() {
       >
         <Button href="/contact">Start at discovery</Button>
       </PageHero>
+      <SectionLinks
+        items={processSteps.map((step) => ({ id: sectionId(step.name), label: step.name }))}
+      />
       <section className="shell">
         {processSteps.map((step, index) => (
-          <article key={step.name} className="process-detail">
+          <article key={step.name} className="process-detail" id={sectionId(step.name)}>
             <span className="mono">0{index + 1}</span>
             <div>
               <h2>{step.name}</h2>
               <p>{step.text}</p>
-              <p style={{ marginTop: 20 }}>
+              <p>
                 {
                   [
                     'We discuss goals, users, current tools, constraints and the examples that show the problem. Existing software and access are reviewed only as needed.',
@@ -35,6 +40,7 @@ export default function ProcessPage() {
               </p>
             </div>
             <div className="process-output">
+              <p className="eyebrow">What you leave with</p>
               <p>{step.output}</p>
             </div>
           </article>
