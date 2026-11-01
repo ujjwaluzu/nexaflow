@@ -281,7 +281,7 @@ ol {
   width: calc(100% - 64px);
   max-width: 1600px;
   margin-inline: auto;
-  overflow: clip;
+  overflow: visible;
   background: #0d0e0b;
   backdrop-filter: blur(18px);
   border: 1px solid #343a2d;
@@ -375,9 +375,15 @@ ol {
 }
 .nav-cta:hover { background: #d4ff72; border-color: #d4ff72; text-decoration: none; }
 .nav-mega-panel {
+  position: absolute;
+  top: 100%;
+  inset-inline: -1px;
   display: grid;
   grid-template-rows: 0fr;
-  border-top: 1px solid transparent;
+  border: 1px solid transparent;
+  border-radius: 0 0 26px 26px;
+  background: #0d0e0b;
+  box-shadow: 0 18px 28px #00000035;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-5px);
@@ -386,7 +392,7 @@ ol {
 }
 .nav-mega-panel.is-open {
   grid-template-rows: 1fr;
-  border-top-color: #343a2d;
+  border-color: #343a2d;
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -398,7 +404,7 @@ ol {
   grid-template-columns: minmax(190px, 0.7fr) minmax(0, 2fr);
   gap: clamp(24px, 4vw, 64px);
   min-height: 0;
-  max-height: calc(100dvh - 77px);
+  max-height: calc(100dvh - 80px);
   overflow-y: auto;
   overscroll-behavior: contain;
   padding: 26px clamp(24px, 4vw, 56px) 30px;
@@ -426,12 +432,22 @@ ol {
   display: none;
 }
 .mobile-nav {
-  border-top: 1px solid #343a2d;
+  position: absolute;
+  top: 100%;
+  inset-inline: -1px;
+  border: 1px solid #343a2d;
+  border-radius: 0 0 26px 26px;
+  box-shadow: 0 18px 28px #00000035;
   padding: 8px 0 20px;
   background: var(--background);
   max-height: calc(100dvh - 77px);
   overflow-y: auto;
   overscroll-behavior: contain;
+}
+.site-header:has(.nav-mega-panel.is-open),
+.site-header:has(.mobile-nav:not([hidden])) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .mobile-nav nav {
   display: flex;

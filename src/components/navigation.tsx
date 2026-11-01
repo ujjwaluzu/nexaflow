@@ -100,8 +100,8 @@ export function Navigation() {
     if (!activeHref) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setActiveHref(null);
         header.current?.querySelector<HTMLButtonElement>('.nav-menu-trigger.is-active')?.focus();
+        setActiveHref(null);
       }
     };
     const onPointerDown = (event: PointerEvent) => {
