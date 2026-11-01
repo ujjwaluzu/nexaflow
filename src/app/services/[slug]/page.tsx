@@ -99,24 +99,22 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           ))}
         </div>
       </section>
-      <section className="section section-surface" id="applications">
-        <div className="shell split-content">
-          <div>
-            <h2>
-              Real work.
-              <br />
-              Clear applications.
-            </h2>
-          </div>
-          <ul className="use-list">
-            {service.uses.map((use) => (
-              <li key={use}>
-                <ArrowUpRight size={18} />
-                {use}
-              </li>
-            ))}
-          </ul>
+      <section className="section shell split-content" id="applications">
+        <div>
+          <h2>
+            Real work.
+            <br />
+            Clear applications.
+          </h2>
         </div>
+        <ul className="use-list">
+          {service.uses.map((use) => (
+            <li key={use}>
+              <ArrowUpRight size={18} />
+              {use}
+            </li>
+          ))}
+        </ul>
       </section>
       <section className="section shell split-content">
         <div>

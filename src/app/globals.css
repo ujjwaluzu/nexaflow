@@ -795,10 +795,6 @@ ol {
   color: var(--foreground);
   font-family: var(--font-body);
 }
-.section-surface {
-  background: #151713;
-  border-block: 1px solid #343a2d80;
-}
 .why-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
